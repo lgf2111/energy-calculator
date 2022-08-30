@@ -9,7 +9,7 @@ class CalculatorForm(FlaskForm):
     brand_list = sorted([(_.name, _.name) for _ in Brand.query.all()])
     brand_list.append(brand_list.pop(brand_list.index(("Others", "Others")))) # Shift Others to last element
     ticks_list = [(_, _) for _ in range(1,6)]
-   
+    
     appliance = SelectField('Appliance', choices=appliance_list, validators=[DataRequired()])
     brand = SelectField('Brand Name', choices=brand_list, validators=[DataRequired()])
     ticks = RadioField('Efficiency Level (How many ticks)', choices=ticks_list, validators=[DataRequired()])
