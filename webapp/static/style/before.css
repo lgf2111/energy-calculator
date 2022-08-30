@@ -1,0 +1,24 @@
+h2{
+    font-family: monospace;
+}
+
+h3{
+    font-family: monospace;
+}
+
+#title{
+  
+}
+
+#cost{
+    padding-top:10%;
+}
+
+.content{
+    padding-top:5%
+}
+
+
+.btn-primary{
+    width:30%;
+}
