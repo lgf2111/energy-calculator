@@ -1,6 +1,7 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_admin import Admin
+from flask_admin.contrib.sqla import ModelView
 
 app = Flask(__name__)
 
@@ -12,5 +13,8 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 # Initializations
 db = SQLAlchemy(app)
 admin = Admin(app, name='Energy Calculator', template_mode='bootstrap4')
+from webapp.models import Brand, Appliance
+admin.add_view(ModelView(Appliance, db.session))
+admin.add_view(ModelView(Brand, db.session))
 
 from webapp import routes
