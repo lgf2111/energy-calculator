@@ -12,5 +12,5 @@ class CalculatorForm(FlaskForm):
    
     appliance = SelectField('Appliance', choices=appliance_list, validators=[DataRequired()])
     brand = SelectField('Brand Name', choices=brand_list, validators=[DataRequired()])
-    ticks = RadioField('Efficiency Level', choices=ticks_list, validators=[DataRequired()])
+    ticks = RadioField('Efficiency Level (How many ticks)', choices=ticks_list, validators=[DataRequired()])
     usage = IntegerField('Hours Used (Per day)',  validators=[DataRequired(), NumberRange(0, 24)])
