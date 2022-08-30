@@ -1,6 +1,6 @@
 <h1 align="center">
   <br>
-  <a href="https://flask-blog.lgf2111.repl.co/"><img src="./logo.png" alt="Flask Blog" width="200"></a>
+  <a href="https://flask-blog.lgf2111.repl.co/"><img src="./webapp/static/src/logo.png" alt="Flask Blog" width="200"></a>
   <br>
   CodeOverflow-Hackathon
   <br>
@@ -13,7 +13,7 @@
   <a href="#how-to-use">How To Use</a> •
   <a href="#contributors">Contributors</a> •
   <a href="#credits">Credits</a> •
-  <a href="#related">Related</a>
+  <!-- <a href="#related">Related</a> -->
 </p>
 
 <!-- ![screenshot](./misc_src/Website%20Screenshot.png) -->
