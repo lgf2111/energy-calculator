@@ -17,5 +17,6 @@ class Brand(db.Model):
     name = db.Column(db.String(100), nullable=False)
     date_added = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
     appliances = db.relationship('Appliance', backref='brand', lazy=True)
+    
     def __repr__(self):
         return f"Appliance('{self.name}', '{self.watts}', '{self.date_added}')"
