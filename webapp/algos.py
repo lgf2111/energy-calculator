@@ -1,17 +1,13 @@
-from webapp.models import appliance, brand
+def calculate(television, fridge, air_conditioner, washing_machine, hours):
+    television = (television.watts * hours["television"])
+    fridge = (fridge.watts * hours["fridge"])
+    air_conditioner = (air_conditioner.watts * hours["air_conditioner"])
+    washing_machine = (washing_machine.watts * hours["washing_machine"])
+    total_energy = television + fridge + air_conditioner + washing_machine
+    total_energy = total_energy / 1000
+    total_amount = total_energy * 0.30
+    return total_energy, total_amount
 
-
-print("Welcome to Energy Calculato\nPlease Enter the Hours and Brand based on the appliance: ")
-totalenergy = 0
-
-
-def calculate(tv, fridge, aircon, wm):
-    tv = (tv.watts * tv.hours) * 365
-    fridge = (fridge.watt * fridge.hours) * 365
-    aircon = (aircon.watt * aircon.hours) * 365
-    wm = (wm.watt * wm.hours) * 365
-    totalenergy = tv + fridge + aircon + wm
-    totalenergy = totalenergy/1000
-    print(totalenergy, "kwh per annum")
-    totalamt = totalenergy * 0.30
-    print("You spent ", totalamt)
+def recommend(hours):
+    television, fridge, air_conditioner, washing_machine = hours
+    return hours
