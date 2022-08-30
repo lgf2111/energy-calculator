@@ -2,8 +2,12 @@
 <form action="" method="post">
     {{ form.hidden_tag() }}
 
+<head>
+    <link rel="stylesheet" href="../static/style/style.css">
+</head>
 
-    <div class="form-group" id="Appliance">
+
+    <div class="form-group"  id="Appliance">
         {{ form.appliance.label(class="form-control-label") }}
         {% if form.appliance.errors %}
             {{ form.appliance(class="form-control form-control-lg is-invalid") }}
@@ -15,10 +19,11 @@
         {% else %}
             {{ form.appliance(class="form-control form-control-lg") }}
         {% endif %}
+        
     </div>
 
 
-    <div class="form-group" id = "Brand">
+    <div class="form-group"  id = "Brand">
         {{ form.brand.label(class="form-control-label") }}
         {% if form.brand.errors %}
             {{ form.brand(class="form-control form-control-lg is-invalid") }}
@@ -33,7 +38,7 @@
     </div>
 
 
-    <div class="form-group" id = "Effciency">
+    <div class="form-group"  id = "">
         {{ form.ticks.label(class="form-control-label") }}
         {% if form.ticks.errors %}
             {{ form.ticks(class="form-control form-control-lg is-invalid") }}
@@ -43,7 +48,7 @@
                 {% endfor %}
             </div>
         {% else %}
-            {{ form.ticks(class="form-control form-control-lg") }}
+            {{ form.ticks(class="form-control form-control-lg", id = "Effciency" ) }}
         {% endif %}
     </div>
 
