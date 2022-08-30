@@ -12,7 +12,8 @@ def test_calculate():
 def test_recommend():
     hours = {"television": 2, "fridge": 2, "air_conditioner": 2, "washing_machine": 2}
     recommendations = recommend(hours)
-    assert recommendations == {"television": "Limit television to 2 hours",
-                                "fridge": "Changing to a more efficient brand or reducing the temperature can reduct its energy consumption",
-                                "air_conditioner": "Limit air conditioner to 2 hours",
-                                "washing_machine": "Decrease the number of times of washing to 2"}, recommendations
+    
+    assert recommendations == ({"television": {"reco": "Great Job!", "savetime": "",},
+                                "fridge": "Changing to a more efficient brand or reducing the temperature can reduce its energy consumption",
+                              "air_conditioner": "Good Job!",
+                                "washing_machine": "Decrease the time spent washing per load"}, savetime, saveamt, savewatt, saveprice), recommendations
