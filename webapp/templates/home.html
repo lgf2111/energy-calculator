@@ -1,26 +1,24 @@
 {% extends "includes/base.html" %} {% block content %}
 <form action="" method="post">
+    <meta id="brandList" content="{{ brand_list }}">
     <script src="{{ url_for('static', filename='script/filter-brands.js') }}"></script>
     {{ form.hidden_tag() }}
-    <head>
-    <link rel="stylesheet" href="../static/style/style.css" />
-    </head>
 
-    <div class="form-group" id="Appliance">
+    <div class="form-group">
     {{ form.appliance.label(class="form-control-label") }} 
     {% if form.appliance.errors %} 
-        {{ form.appliance(class="form-control form-control-lg is-invalid") }}
+        {{ form.appliance(class="form-control form-control-lg is-invalid", id="appliance") }}
         <div class="invalid-feedback">
             {% for error in form.appliance.errors %}
                 <span>{{ error }}</span>
             {% endfor %}
         </div>
     {% else %} 
-        {{ form.appliance(class="form-control form-control-lg") }} 
+        {{ form.appliance(class="form-control form-control-lg", id="appliance") }} 
     {% endif %}
     </div>
 
-    <div class="form-group" id="Brand">
+    <div class="form-group">
     {{ form.brand.label(class="form-control-label") }} 
     {% if form.brand.errors %} 
         {{ form.brand(class="form-control form-control-lg is-invalid") }}
@@ -44,16 +42,11 @@
         {% endfor %}
         </div>
     {% else %} 
-        {{ form.ticks(class="form-control form-control-lg", id ="Efficiency" ) }} 
+        {{ form.ticks(class="form-control form-control-lg") }}
     {% endif %}
     </div>
-<<<<<<< HEAD
-    {% else %} {{ form.ticks(class="form-control form-control-lg") }} {% endif %}
-  </div>
-=======
->>>>>>> 9d371c9730c279d43bc569bf4ee1d9c9bfb57f0b
 
-    <div class="form-group" id="Duration">
+    <div class="form-group">
     {{ form.usage.label(class="form-control-label") }} 
     {% if form.usage.errors %} 
         {{ form.usage(class="form-control form-control-lg is-invalid") }}
