@@ -1,7 +1,6 @@
 {% extends "includes/base.html" %} 
 {% block content %}
 <form action="" method="post">
-    <meta id="brandList" content="{{ brand_list }}">
     <script src="{{ url_for('static', filename='script/filter-brands.js') }}"></script>
     {{ form.hidden_tag() }}
 
