@@ -4,10 +4,13 @@ from webapp.forms import CalculatorForm
 
 @app.route('/')
 @app.route('/home')
-@app.route('/calculator')
 def home():
+    return render_template('home.html')
+
+@app.route('/calculator')
+def calculator():
     form = CalculatorForm()
-    return render_template('home.html', title='Energy Calculator', form=form)
+    return render_template('calculator.html', title='Energy Calculator', form=form)
 
 @app.route('/before')
 def before():
@@ -16,3 +19,4 @@ def before():
 @app.route("/after")
 def after():
     return render_template('after.html')
+
