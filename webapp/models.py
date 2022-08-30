@@ -18,4 +18,4 @@ class Brand(db.Model):
     appliances = db.relationship('Appliance', backref='brand', lazy=True)
     
     def __repr__(self):
-        return f"Appliance('{self.name}', '{self.date_added}')"
+        return f"Brand('{self.name}', '{self.date_added}')"

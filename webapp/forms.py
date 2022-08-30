@@ -5,7 +5,7 @@ from wtforms.validators import DataRequired
 from webapp.models import Appliance, Brand
 
 class CalculatorForm(FlaskForm):
-    appliance_list = [(_.name, _.name) for _ in Appliance.query.all()]
+    appliance_list = [(_, _) for _ in set([_.name for _ in Appliance.query.all()])]
     brand_list = [(_.name, _.name) for _ in Brand.query.all()]
     ticks_list = [(_, _) for _ in range(1,6)]
    
