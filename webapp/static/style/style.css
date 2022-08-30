@@ -4,6 +4,11 @@
     font-family: monospace;
 }
 
+
+.buttons{
+    margin: auto;
+}
+
 #Effciency{
     list-style-type: none ;
     

@@ -1,5 +1,5 @@
 {% extends "includes/base.html" %} {% block content %}
-<form action="" method="post">
+<form action="" method="post">  
     {{ form.hidden_tag() }}
 
 <head>
@@ -65,6 +65,12 @@
         {% else %}
             {{ form.usage(class="form-control form-control-lg") }}
         {% endif %}
+    </div>
+
+
+    <div class="buttons">
+        <button class="btn btn-primary" class="bootbutt" type="submit">Add</button>
+        <button class="btn btn-primary" class="bootbutt" type="submit">Submit</button>
     </div>
 
 
