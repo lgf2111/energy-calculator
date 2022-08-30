@@ -1,9 +1,16 @@
+import enum
 from flask_wtf import FlaskForm
-from wtforms import SelectField
+from wtforms import SelectField, RadioField
 from wtforms.validators import DataRequired
+from webapp.models import Appliance, Brand
 
 class CalculatorForm(FlaskForm):
-    appliance = SelectField('Appliance', choices=[('Washing Machine', 'Refrigerator', 'Television', 'Air-conditioning')], validators=[DataRequired()])
-    brand = SelectField('Brand Name', choices=[('Panasonic', 'Samsung', 'Mitsubishi', 'Daikin', 'LG',  'Philips', 'Hitachi', )], validators=[DataRequired()])
-    ticks = SelectField('Efficiency Level', choices=[(1, 2, 3, 4, 5)], validators=[DataRequired()])
-    time_used = SelectField('Duration Used', choices=[('Less than 1h', '2h', '3h', 'More than 3h')], validators=[DataRequired()])
+    appliance_list = [(_.name, _.name) for _ in Appliance.query.all()]
+    brand_list = [(_.name, _.name) for _ in Brand.query.all()]
+    ticks_list = [(_, _) for _ in range(1,6)]
+    usage_list = [(i, v) for i, v in enumerate(["< 1h", "1h", "2h", "3h", "> 3h"])]
+
+    appliance = SelectField('Appliance', choices=appliance_list, validators=[DataRequired()])
+    brand = SelectField('Brand Name', choices=brand_list, validators=[DataRequired()])
+    ticks = RadioField('Efficiency Level', choices=ticks_list, validators=[DataRequired()])
+    usage = RadioField('Duration Used', choices=usage_list, validators=[DataRequired()])
