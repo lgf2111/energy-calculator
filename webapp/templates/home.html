@@ -46,13 +46,8 @@
         {{ form.ticks(class="form-control form-control-lg") }}
     {% endif %}
     </div>
-<<<<<<< HEAD
-    {% else %} {{ form.ticks(class="form-control form-control-lg") }} {% endif %}
-  </div>
-=======
->>>>>>> 9d371c9730c279d43bc569bf4ee1d9c9bfb57f0b
 
-    <div class="form-group">
+    <div class="form-group" id="Duration">
     {{ form.usage.label(class="form-control-label") }} 
     {% if form.usage.errors %} 
         {{ form.usage(class="form-control form-control-lg is-invalid") }}
@@ -78,7 +73,6 @@
         {% else %} 
             {{ form.ticks(class="form-control form-control-lg", id ="Efficiency" ) }} 
         {% endif %}
->>>>>>> 97648b1616deeec15d283a7248714bd843ebcbf3
     </div>
 </form>
 {% endblock content %}
