@@ -3,6 +3,7 @@ totalenergy = 0
 def calusage(tv, fridge, aircon, wm):
     global totalenergy
     totalenergy = tv + fridge + aircon + wm
+    totalenergy = totalenergy/1000
     print(totalenergy, "kwh per annum")
 
 def calamt(totalenergy):
