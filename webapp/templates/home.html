@@ -1,4 +1,5 @@
-{% extends "includes/base.html" %} {% block content %}
+{% extends "includes/base.html" %} 
+{% block content %}
 <form action="" method="post">
     <meta id="brandList" content="{{ brand_list }}">
     <script src="{{ url_for('static', filename='script/filter-brands.js') }}"></script>
@@ -45,6 +46,11 @@
         {{ form.ticks(class="form-control form-control-lg") }}
     {% endif %}
     </div>
+<<<<<<< HEAD
+    {% else %} {{ form.ticks(class="form-control form-control-lg") }} {% endif %}
+  </div>
+=======
+>>>>>>> 9d371c9730c279d43bc569bf4ee1d9c9bfb57f0b
 
     <div class="form-group">
     {{ form.usage.label(class="form-control-label") }} 
@@ -58,6 +64,21 @@
     {% else %} 
         {{ form.usage(class="form-control form-control-lg") }} 
     {% endif %}
+    </div>
+
+    <div class="form-group my-2">
+        {{ form.ticks.label(class="form-control-label") }} 
+        {% if form.ticks.errors %} 
+            {{ form.ticks(class="form-control form-control-lg is-invalid") }}
+            <div class="invalid-feedback">
+            {% for error in form.ticks.errors %}
+                <span>{{ error }}</span>
+            {% endfor %}
+            </div>
+        {% else %} 
+            {{ form.ticks(class="form-control form-control-lg", id ="Efficiency" ) }} 
+        {% endif %}
+>>>>>>> 97648b1616deeec15d283a7248714bd843ebcbf3
     </div>
 </form>
 {% endblock content %}
