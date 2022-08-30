@@ -2,68 +2,63 @@
 <form action="" method="post">
     {{ form.hidden_tag() }}
     <head>
-    <link rel="stylesheet" href="../static/style/style.css" />
+        <link rel="stylesheet" href="../static/style/style.css" />
     </head>
 
     <div class="form-group" id="Appliance">
-    {{ form.appliance.label(class="form-control-label") }} 
-    {% if form.appliance.errors %} 
-        {{ form.appliance(class="form-control form-control-lg is-invalid") }}
-        <div class="invalid-feedback">
-            {% for error in form.appliance.errors %}
-                <span>{{ error }}</span>
-            {% endfor %}
-        </div>
-    {% else %} 
-        {{ form.appliance(class="form-control form-control-lg") }} 
-    {% endif %}
+        {{ form.appliance.label(class="form-control-label") }} 
+        {% if form.appliance.errors %} 
+            {{ form.appliance(class="form-control form-control-lg is-invalid") }}
+            <div class="invalid-feedback">
+                {% for error in form.appliance.errors %}
+                    <span>{{ error }}</span>
+                {% endfor %}
+            </div>
+        {% else %} 
+            {{ form.appliance(class="form-control form-control-lg") }} 
+        {% endif %}
     </div>
 
     <div class="form-group" id="Brand">
-    {{ form.brand.label(class="form-control-label") }} 
-    {% if form.brand.errors %} 
-        {{ form.brand(class="form-control form-control-lg is-invalid") }}
-        <div class="invalid-feedback">
-        {% for error in form.brand.errors %}
-            <span>{{ error }}</span>
-        {% endfor %}
-        </div>
-    {% else %} 
-        {{ form.brand(class="form-control form-control-lg") }} 
-    {% endif %}
+        {{ form.brand.label(class="form-control-label") }} 
+        {% if form.brand.errors %} 
+            {{ form.brand(class="form-control form-control-lg is-invalid") }}
+            <div class="invalid-feedback">
+            {% for error in form.brand.errors %}
+                <span>{{ error }}</span>
+            {% endfor %}
+            </div>
+        {% else %} 
+            {{ form.brand(class="form-control form-control-lg") }} 
+        {% endif %}
     </div>
 
     <div class="form-group">
-    {{ form.ticks.label(class="form-control-label") }} 
-    {% if form.ticks.errors %} 
-        {{ form.ticks(class="form-control form-control-lg is-invalid") }}
-        <div class="invalid-feedback">
-        {% for error in form.ticks.errors %}
-            <span>{{ error }}</span>
-        {% endfor %}
-        </div>
-    {% else %} 
-        {{ form.ticks(class="form-control form-control-lg", id ="Efficiency" ) }} 
-    {% endif %}
+        {{ form.ticks.label(class="form-control-label") }} 
+        {% if form.ticks.errors %} 
+            {{ form.ticks(class="form-control form-control-lg is-invalid") }}
+            <div class="invalid-feedback">
+            {% for error in form.ticks.errors %}
+                <span>{{ error }}</span>
+            {% endfor %}
+            </div>
+        {% else %} 
+            {{ form.ticks(class="form-control form-control-lg", id ="Efficiency" ) }} 
+        {% endif %}
     </div>
-<<<<<<< HEAD
-    {% else %} {{ form.ticks(class="form-control form-control-lg") }} {% endif %}
-  </div>
-=======
->>>>>>> 9d371c9730c279d43bc569bf4ee1d9c9bfb57f0b
 
     <div class="form-group" id="Duration">
-    {{ form.usage.label(class="form-control-label") }} 
-    {% if form.usage.errors %} 
-        {{ form.usage(class="form-control form-control-lg is-invalid") }}
-        <div class="invalid-feedback">
-        {% for error in form.usage.errors %}
-            <span>{{ error }}</span>
-        {% endfor %}
-        </div>
-    {% else %} 
-        {{ form.usage(class="form-control form-control-lg") }} 
-    {% endif %}
+        {{ form.usage.label(class="form-control-label") }} 
+        {% if form.usage.errors %} 
+            {{ form.usage(class="form-control form-control-lg is-invalid") }}
+            <div class="invalid-feedback">
+            {% for error in form.usage.errors %}
+                <span>{{ error }}</span>
+            {% endfor %}
+            </div>
+        {% else %} 
+            {{ form.usage(class="form-control form-control-lg") }} 
+        {% endif %}
     </div>
 
 
