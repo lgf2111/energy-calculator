@@ -7,3 +7,19 @@
 #Efficiency{
     list-style-type: none ;
 }
+
+
+
+.btn-primary{
+    width: 10%;
+    margin: 0px;
+    font-family: monospace;
+}
+
+.btn-success{
+
+    width: 10%;
+    margin: 0px;
+    font-family: monospace;
+
+}
