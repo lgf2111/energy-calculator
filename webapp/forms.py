@@ -5,8 +5,9 @@ from wtforms.validators import DataRequired
 from webapp.models import Appliance, Brand
 
 class CalculatorForm(FlaskForm):
-    appliance_list = [(_, _) for _ in set([_.name for _ in Appliance.query.all()])]
-    brand_list = [(_.name, _.name) for _ in Brand.query.all()]
+    appliance_list = sorted([(_, _) for _ in set([_.name for _ in Appliance.query.all()])])
+    brand_list = sorted([(_.name, _.name) for _ in Brand.query.all()])
+    brand_list.append(brand_list.pop(brand_list.index(("Others", "Others")))) # Shift Others to last element
     ticks_list = [(_, _) for _ in range(1,6)]
    
 
