@@ -1,3 +1,7 @@
+body {
+    overflow-x: hidden !important;
+}
+
 .form-group {
     width: 50%;
     margin: auto;
@@ -7,8 +11,6 @@
 ul {
     list-style-type: none ;
 }
-
-
 
 .btn-primary{
     width: 10%;
