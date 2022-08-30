@@ -3,15 +3,15 @@ totalenergy = 0
 def calusage(tv, fridge, aircon, wm):
     global totalenergy
     totalenergy = tv + fridge + aircon + wm
-    return totalenergy, "kwh per annum"
+    print(totalenergy, "kwh per annum")
 
 def calamt(totalenergy):
     totalamt = totalenergy * 0.30
-    return "You spent ". totalamt
+    print("You spent ", totalamt)
 #TV
 print("TV Brand and Usage")
 tvbrand = input("TV Brand: ")
-tvhours = input("TV Hour Usage")
+tvhours = int(input("TV Hour Usage: "))
 if tvbrand == "panasonic":
     tvusage = 110
 elif tvbrand == "lg":
@@ -27,7 +27,7 @@ tv = (tvusage * tvhours) * 365
 #Fridge
 print("Fridge Brand and Usage")
 fridgebrand = input("Fridge Brand: ")
-fridgehours = input("Fridge Hour Usage")
+fridgehours = int(input("Fridge Hour Usage: "))
 if fridgebrand == "panasonic":
     fridgeusage = 408
 elif fridgebrand == "lg":
@@ -43,7 +43,7 @@ fridge = (fridgeusage * fridgehours) * 365
 #AirCon
 print("Aircon Brand and Usage")
 airconbrand = input("Aircon Brand: ")
-airconhours = input("Aircon Usage")
+airconhours = int(input("Aircon Usage: "))
 if airconbrand == "daikin":
     airconusage = 750
 elif airconbrand == "mitshubishi":
@@ -59,7 +59,7 @@ aircon = (airconusage * airconhours) * 365
 #washing machine
 print("Washing Machine Brand and Usage")
 wmbrand = input("Washing Machine Brand: ")
-wmhours = input("Washing Machine Hour Usage")
+wmhours = int(input("Washing Machine Hour Usage: "))
 if wmbrand == "Panasonic":
     wmusage = 750
 elif wmbrand == "mitshubishi":
@@ -73,7 +73,7 @@ elif wmbrand == "others":
 wm = (wmusage * wmhours) * 365
 
 #Total Energy 
-print(calusage(tv, fridge, aircon, wm))
+calusage(tv, fridge, aircon, wm)
 
 #Total money spent
-print(calamt(totalenergy))
+calamt(totalenergy)
