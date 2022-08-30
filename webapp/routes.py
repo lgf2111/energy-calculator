@@ -6,5 +6,5 @@ from webapp.forms import CalculatorForm
 @app.route('/home')
 @app.route('/calculator')
 def home():
-    form = CalculatorForm()
+    form = CalculatorForm()        
     return render_template('home.html', title='Energy Calculator', form=form)
