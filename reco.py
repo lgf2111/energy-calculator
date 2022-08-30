@@ -13,6 +13,8 @@ elif usage > 2:
     saveamt = savetime * 365
     savewatt = saveamt * watt
     saveprice = savewatt * 0.3
+elif usage < 2:
+    print("Great Job!")
 #fridge
 if usage != 0:
     print("Changing to a more efficient brand or reducing the temperature can reduce its energy consumption") 
@@ -38,10 +40,17 @@ elif usage > 6:
     savewatt = saveamt * watt
     saveprice = savewatt * 0.3
 elif usage > 4:
-    print("increase aircon temperature")
+    print("limit aircon to 2 hours")
     saveamt = savetime * 365
     savewatt = saveamt * 100
     saveprice = savewatt * 0.3
+elif usage > 2 :
+    print("limit aircon to 2 hours")
+    saveamt = savetime * 365
+    savewatt = saveamt * 100
+    saveprice = savewatt * 0.3
+elif usage <= 2:
+    print("Good Job!")
 #wm
 if usage > 3:
     print("decrease the number of times of washing to 3")
@@ -55,7 +64,7 @@ if usage > 2:
     saveamt = savetime * 365
     savewatt = saveamt * watt
     saveprice = savewatt * 0.3
-if usage < 2:
+if usage <= 2:
     print("decrease the time spent washing")
     saveamt = savetime * 365
     savewatt = saveamt * 50
