@@ -1,7 +1,7 @@
 import enum
 from flask_wtf import FlaskForm
 from wtforms import SelectField, RadioField, IntegerField
-from wtforms.validators import DataRequired
+from wtforms.validators import DataRequired, NumberRange
 from webapp.models import Appliance, Brand
 
 class CalculatorForm(FlaskForm):
@@ -13,4 +13,4 @@ class CalculatorForm(FlaskForm):
     appliance = SelectField('Appliance', choices=appliance_list, validators=[DataRequired()])
     brand = SelectField('Brand Name', choices=brand_list, validators=[DataRequired()])
     ticks = RadioField('Efficiency Level', choices=ticks_list, validators=[DataRequired()])
-    usage = IntegerField('Duration Used',  validators=[DataRequired()])
+    usage = IntegerField('Hours Used (Per day)',  validators=[DataRequired(), NumberRange(0, 24)])
