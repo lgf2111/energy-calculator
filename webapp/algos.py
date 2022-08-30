@@ -10,4 +10,4 @@ def calculate(television, fridge, air_conditioner, washing_machine, hours):
 
 def recommend(hours):
     television, fridge, air_conditioner, washing_machine = hours
-    return hours
+    return ...
