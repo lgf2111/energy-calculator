@@ -6,4 +6,4 @@ app.config['SECRET_KEY'] = '13050e1c636532b3237d222fcd7fd944'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///site.db'
 db = SQLAlchemy(app)
 
-from app_package import routes
+from webapp import routes
