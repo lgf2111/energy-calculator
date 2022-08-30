@@ -8,3 +8,11 @@ from webapp.forms import CalculatorForm
 def home():
     form = CalculatorForm()
     return render_template('home.html', title='Energy Calculator', form=form)
+
+@app.route('/before')
+def before():
+    return render_template('before.html')
+
+@app.route("/after")
+def after():
+    return render_template('after.html')
