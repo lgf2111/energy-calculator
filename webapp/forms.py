@@ -1,6 +1,6 @@
 import enum
 from flask_wtf import FlaskForm
-from wtforms import SelectField, RadioField, IntegerField
+from wtforms import SelectField, RadioField, IntegerField, EmailField, PasswordField, SubmitField
 from wtforms.validators import DataRequired, NumberRange
 from webapp.models import Appliance, Brand
 
@@ -14,3 +14,8 @@ class CalculatorForm(FlaskForm):
     brand = SelectField('Brand Name', choices=brand_list, validators=[DataRequired()])
     ticks = RadioField('Efficiency Level (How many ticks)', choices=ticks_list, validators=[DataRequired()])
     usage = IntegerField('Hours Used (Per day)',  validators=[DataRequired(), NumberRange(0, 24)])
+
+class LoginForm(FlaskForm):
+    email = EmailField('Email Address', validators=[DataRequired()])
+    password = PasswordField('Password', validators=[DataRequired()])
+    submit = SubmitField('Login')
