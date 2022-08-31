@@ -31,7 +31,7 @@ def calculator(amt):
     if amt == 0: return redirect(url_for('add_appliance', amt=amt))
     form = CalculatorForm()
     forms = [form for _ in range(amt)]
-    return render_template('calculator.html', title='Energy Calculator', forms=forms, amt=amt)
+    return render_template('calculator copy.html', title='Energy Calculator', forms=forms, amt=amt)
 
 @app.route('/calculator/<int:amt>/add')
 def add_appliance(amt):
