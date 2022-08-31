@@ -11,3 +11,27 @@ body {
     width: 100px;
     padding-left: 20px;
 }
+
+/*navbar link animations*/
+.navbar-nav {
+    position: relative;
+}
+
+.navbar-nav .nav-item a {
+    position: relative;
+}
+
+nav .container-fluid .collapse .navbar-nav .nav-item a:after {
+    content: "";
+    position: absolute;
+    background-color: #000;
+    height: 3px;
+    width: 0;
+    left: 0;
+    bottom: -10px;
+    transition: 0.3s;
+}
+
+a:hover:after {
+    width: 100% !important;
+}

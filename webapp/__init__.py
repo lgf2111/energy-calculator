@@ -13,8 +13,9 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 # Initializations
 db = SQLAlchemy(app)
 admin = Admin(app, name='Energy Calculator', template_mode='bootstrap4')
-from webapp.models import Brand, Appliance
+from webapp.models import Brand, Appliance, LogoutView
 admin.add_view(ModelView(Appliance, db.session))
 admin.add_view(ModelView(Brand, db.session))
+admin.add_view(LogoutView(name='Logout', endpoint='Logout'))
 
 from webapp import routes
