@@ -43,9 +43,16 @@ def before():
 def after():
     return render_template('after.html')
 
-@app.route("/loginv2")
+@app.route("/loginv2", methods=['GET', 'POST'])
 def loginv2():
-    return render_template('loginv2.html')
+    form = LoginForm()
+    if form.validate_on_submit:
+        if form.email.data == "admin@gmail.com" and form.password.data == "password123":
+            flash('Login Successful!', 'success')
+            return redirect(url_for('admin.index'))
+        else:
+            flash("Login Failed", 'danger')
+    return render_template('loginv2.html', form=form)
 
 @app.route("/algo")
 def algo():

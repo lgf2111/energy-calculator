@@ -85,6 +85,11 @@ input {
 	width: 100%;
 }
 
+.submit-btn {
+	background-image: linear-gradient(to bottom right, #37D5D6, #36096D) !important;
+}
+
+
 .container {
 	background-color: #fff;
 	border-radius: 10px;
