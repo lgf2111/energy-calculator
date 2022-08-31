@@ -60,7 +60,9 @@ main {
 }
 
 .media-icons {
-    margin-bottom: 10em !important;
+    margin-bottom: 2em !important;
+    margin-right: 2em !important;
+
 }
 
 .media-icons a {

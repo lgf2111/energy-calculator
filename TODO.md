@@ -5,9 +5,10 @@ Frontend
 - Home
     - Use api and make graphs if have time
         - Using 3rd party api is one of the best way to get additional points
-    - Social Media icons are blocking, move it to the most bottom
+
+    - Social Media icons are blocking, move it to the most bottom #done!
 - Calculator (JS)
-    - Delete button on each added form
+    - Delete button on each added form #only button added :/
 
 Backend
 - 

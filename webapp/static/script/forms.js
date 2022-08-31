@@ -47,3 +47,9 @@ function addForm() {
     window.scrollTo(0, document.body.scrollHeight)
 }
 addForm()
+
+function delform() {
+    var form = document.createElement("div");
+    form.className = "form";
+    forms.removeChild(form);
+}
