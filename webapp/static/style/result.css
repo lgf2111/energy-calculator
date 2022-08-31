@@ -1,0 +1,14 @@
+h1 {
+    text-align: center;
+    padding-top: 3%;
+}
+
+h3 {
+    text-align: center;
+    padding-top: 1%;
+}
+
+.graph {
+    padding-left: 4%;
+    display: flex;
+}
