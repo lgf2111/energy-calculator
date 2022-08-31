@@ -43,6 +43,10 @@ def before():
 def after():
     return render_template('after.html')
 
+@app.route("/loginv2")
+def loginv2():
+    return render_template('loginv2.html')
+
 @app.route("/algo")
 def algo():
     from webapp.models import Appliance
