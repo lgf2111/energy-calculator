@@ -54,7 +54,7 @@ def after():
 @app.route("/loginv2", methods=['GET', 'POST'])
 def loginv2():
     form = LoginForm()
-    if form.validate_on_submit:
+    if form.validate_on_submit():
         if form.email.data == "admin@gmail.com" and form.password.data == "password123":
             flash('Login Successful!', 'success')
             return redirect(url_for('admin.index'))
