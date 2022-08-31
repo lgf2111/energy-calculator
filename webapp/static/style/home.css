@@ -5,6 +5,10 @@ main {
     background: url(../src/bg.jpg) no-repeat;
     background-size: cover;
     background-position: center;
+    -webkit-background-size: contain;
+    -moz-background-size: contain;
+    -o-background-size: contain;
+    background-size: contain;
 }
 
 .content {
