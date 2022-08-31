@@ -7,3 +7,20 @@ h3 {
     text-align: center;
     padding-top: 1%;
 }
+
+.first {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.graph {
+    padding-left: 5%;
+}
+
+.mainstate {
+    padding-left: 1%;
+    padding-right: 13%;
+    font-size: 21px;
+}
+
