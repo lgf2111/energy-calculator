@@ -3,7 +3,6 @@ from flask import render_template, redirect, url_for, flash
 from webapp.forms import CalculatorForm, LoginForm
 from webapp.algos import calculate, recommend
 from flask_login import current_user, logout_user
-from copy import deepcopy
 
 @app.route('/')
 @app.route('/home')
