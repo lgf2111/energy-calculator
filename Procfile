@@ -1,1 +1,1 @@
-web: gunicorn --chdir codeoverflow-hackathon run:app
+web: gunicorn run.py
