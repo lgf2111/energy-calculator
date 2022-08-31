@@ -3,6 +3,7 @@ from flask import render_template, redirect, url_for, flash
 from webapp.forms import CalculatorForm, LoginForm
 from webapp.algos import calculate, recommend
 from flask_login import current_user, logout_user
+from copy import deepcopy
 
 @app.route('/')
 @app.route('/home')
@@ -25,10 +26,17 @@ def logout():
     current_user.logout_user
     return redirect('home')
 
-@app.route('/calculator')
-def calculator():
+@app.route('/calculator/<int:amt>')
+def calculator(amt):
+    if amt == 0: return redirect(url_for('add_appliance', amt=amt))
     form = CalculatorForm()
-    return render_template('calculator.html', title='Energy Calculator', form=form)
+    forms = [form for _ in range(amt)]
+    return render_template('calculator.html', title='Energy Calculator', forms=forms, amt=amt)
+
+@app.route('/calculator/<int:amt>/add')
+def add_appliance(amt):
+    return redirect(url_for('calculator', amt=amt+1))
+
 
 @app.route("/result")
 def result():

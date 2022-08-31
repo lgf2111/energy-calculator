@@ -3,6 +3,7 @@
 <div class="container bg-white my-3 border rounded">
     <form action="" method="post">
         <script src="{{ url_for('static', filename='script/filter-brands.js') }}" defer></script>
+        {% for form in forms %}
         {{ form.hidden_tag() }}
     
         <div class="form-group my-2">
@@ -69,11 +70,12 @@
                 {% endfor %}
             {% endif %}
         </div>
+        {% endfor %}
     </form>
 </div>
-<div class="container-fluid d-flex justify-content-center">
+<div class="container-fluid d-flex justify-content-center mb-5">
     <div class="">
-        <a class="btn btn-primary mx-2" href="#" type="submit">Add</a>
+        <a class="btn btn-primary mx-2" href="{{ url_for('add_appliance', amt=amt) }}" type="submit">Add</a>
         <a class="btn btn-success mx-2" href="#" role="button">Calculate</a>
     </div>
 </div>
