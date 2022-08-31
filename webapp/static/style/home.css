@@ -10,7 +10,6 @@ main {
     -moz-background-size: contain;
     -o-background-size: contain;
     background-size: contain;
-    z-index: -99;
 }
 
 .content {
