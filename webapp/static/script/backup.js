@@ -108,3 +108,98 @@ function calculate(television, fridge, air_conditioner, washing_machine, hours) 
     width = x * 75 + 125;
   }
   
+  var saveamt, saveprice, savetime, savewatt, usage, watt;
+  usage = 0;
+  watt = 100;
+  
+  if (usage > 4) {
+    console.log("limit tv to 4 hours");
+    savetime = usage - 4;
+    saveamt = savetime * 365;
+    savewatt = saveamt * watt;
+    saveprice = savewatt * 0.3;
+  } else {
+    if (usage > 2) {
+      console.log("limit usage to 2 hours");
+      savetime = usage - 2;
+      saveamt = savetime * 365;
+      savewatt = saveamt * watt;
+      saveprice = savewatt * 0.3;
+    } else {
+      if (usage < 2) {
+        console.log("Great Job!");
+      }
+    }
+  }
+  
+  if (usage !== 0) {
+    console.log("Changing to a more efficient brand or reducing the temperature can reduce its energy consumption");
+    saveamt = savetime * 365;
+    savewatt = saveamt * 30;
+    saveprice = savewatt * 0.3;
+  }
+  
+  if (usage > 10) {
+    console.log("limit aircon to 8 hours");
+    savetime = usage - 10;
+    saveamt = savetime * 365;
+    savewatt = saveamt * watt;
+    saveprice = savewatt * 0.3;
+  } else {
+    if (usage > 8) {
+      console.log("limit aircon to 6 hours");
+      savetime = usage - 6;
+      saveamt = savetime * 365;
+      saveprice = saveamt * 0.3;
+    } else {
+      if (usage > 6) {
+        console.log("limit aircon to 4 hours");
+        savetime = usage - 6;
+        saveamt = savetime * 365;
+        savewatt = saveamt * watt;
+        saveprice = savewatt * 0.3;
+      } else {
+        if (usage > 4) {
+          console.log("limit aircon to 2 hours");
+          saveamt = savetime * 365;
+          savewatt = saveamt * 100;
+          saveprice = savewatt * 0.3;
+        } else {
+          if (usage > 2) {
+            console.log("limit aircon to 2 hours");
+            saveamt = savetime * 365;
+            savewatt = saveamt * 100;
+            saveprice = savewatt * 0.3;
+          } else {
+            if (usage <= 2) {
+              console.log("Good Job!");
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  if (usage > 3) {
+    console.log("decrease the number of times of washing to 3");
+    savetime = usage - 3;
+    saveamt = savetime * 365;
+    savewatt = saveamt * watt;
+    saveprice = savewatt * 0.3;
+  }
+  
+  if (usage > 2) {
+    console.log("decrease the number of times of washing to 2");
+    savetime = usage - 2;
+    saveamt = savetime * 365;
+    savewatt = saveamt * watt;
+    saveprice = savewatt * 0.3;
+  }
+  
+  if (usage <= 2) {
+    console.log("decrease the time spent washing");
+    saveamt = savetime * 365;
+    savewatt = saveamt * 50;
+    saveprice = savewatt * 0.3;
+  }
+  
