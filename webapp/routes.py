@@ -20,3 +20,6 @@ def before():
 def after():
     return render_template('after.html')
 
+@app.route("/result")
+def result():
+    return render_template('result.html')
