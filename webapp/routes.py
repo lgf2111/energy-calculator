@@ -1,11 +1,22 @@
 from webapp import app, db
 from flask import render_template, redirect, url_for, flash
-from webapp.forms import CalculatorForm
+from webapp.forms import CalculatorForm, LoginForm
 
 @app.route('/')
 @app.route('/home')
 def home():
     return render_template('home.html')
+
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    form = LoginForm()
+    if form.validate_on_submit:
+        if form.email.data == "admin@gmail.com" and form.password.data == "password123":
+            flash('Login Successful!', 'success')
+            return redirect(url_for('admin.index'))
+        else:
+            flash("Login Failed", 'danger')
+    return render_template('login.html', title='Login', form=form)
 
 @app.route('/calculator')
 def calculator():
