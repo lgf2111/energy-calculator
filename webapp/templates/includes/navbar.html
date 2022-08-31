@@ -1,8 +1,7 @@
 <nav class="navbar navbar-expand-lg bg-light">
   <div class="container-fluid">
     <a class="navbar-brand d-flex align-middle" href="home">
-      <img class="mx-2" src="{{ url_for('static', filename='src/logo.png') }}" alt="logo" height="25"
-      />
+      <img class="mx-2" src="{{ url_for('static', filename='src/logo.png') }}" alt="logo" height="25"/>
       Energy Calculator
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -13,9 +12,19 @@
         <!-- <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="{{ url_for('admin.index') }}">Admin</a>
         </li> -->
+
+        <li class="nav-item">
+          <a href="{{ url_for('home') }}" class="nav-link">Home</a>
+        </li>
+
+        <li class="nav-item">
+          <a href="{{ url_for('calculator') }}" class="nav-link">Calculator</a>
+        </li>
+
         <li class="nav-item">
           <a class="nav-link" href="{{ url_for('login') }}">Log in</a>
         </li>
+
         <!-- <li class="nav-item dropdown">
           <a
             class="nav-link dropdown-toggle"
