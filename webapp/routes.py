@@ -60,7 +60,7 @@ def loginv2():
             return redirect(url_for('admin.index'))
         else:
             flash("Login Failed", 'danger')
-    return render_template('loginv2.html', form=form)
+    return render_template('loginv2.html', title="Login", form=form)
 
 @app.route("/algo")
 def algo():
