@@ -1,7 +1,7 @@
 {% extends "includes/base.html" %} 
 {% block content %}
 <form action="" method="post">
-    <script src="{{ url_for('static', filename='script/filter-brands.js') }}"></script>
+    <script src="{{ url_for('static', filename='script/filter-brands.js') }}" defer></script>
     {{ form.hidden_tag() }}
 
     <div class="form-group my-2">
