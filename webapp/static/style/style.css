@@ -1,4 +1,8 @@
+/*for base.html*/
+@import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
+
 body {
+    font-family: "Poppins", sans-serif !important;
     overflow-x: hidden !important;
 }
 
@@ -19,9 +23,7 @@ ul {
 }
 
 .btn-success{
-
     width: 10%;
     margin: 0px;
     font-family: monospace;
-
 }

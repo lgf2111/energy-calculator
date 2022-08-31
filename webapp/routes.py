@@ -2,6 +2,7 @@ from webapp import app, db
 from flask import render_template, redirect, url_for, flash
 from webapp.forms import CalculatorForm, LoginForm
 from webapp.algos import calculate, recommend
+from flask_login import current_user, logout_user
 
 @app.route('/')
 @app.route('/home')
@@ -18,6 +19,11 @@ def login():
         else:
             flash("Login Failed", 'danger')
     return render_template('login.html', title='Login', form=form)
+
+@app.route('/logout')
+def logout():
+    current_user.logout_user
+    return redirect('home')
 
 @app.route('/calculator')
 def calculator():
