@@ -38,10 +38,6 @@ def before():
 def after():
     return render_template('after.html')
 
-@app.route("/result")
-def result():
-    return render_template('result.html')
-
 @app.route('/logout')
 def logout():
     current_user.logout_user
