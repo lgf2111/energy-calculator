@@ -40,7 +40,10 @@
         // Set chart options
         var options = {'title':'Energy Consumption Based on Appliance',
                        'width':800,
-                       'height':600};
+                       'height':600,
+                       'colors': ['#e03a3e', '#009ddc', '#fdb827', '#61bb46']
+                        };
+                        
 
         // Instantiate and draw our chart, passing in some options.
         var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
