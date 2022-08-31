@@ -20,6 +20,11 @@ def login():
             flash("Login Failed", 'danger')
     return render_template('login.html', title='Login', form=form)
 
+@app.route('/logout')
+def logout():
+    current_user.logout_user
+    return redirect('home')
+
 @app.route('/calculator')
 def calculator():
     form = CalculatorForm()
@@ -38,7 +43,12 @@ def before():
 def after():
     return render_template('after.html')
 
-@app.route('/logout')
-def logout():
-    current_user.logout_user
-    return redirect('home')
+@app.route("/algo")
+def algo():
+    from webapp.models import Appliance
+    appliances = Appliance.query.all()
+    recommendations = []
+    for appliance in appliances:
+        result = recommend(appliance, 5)
+        recommendations.append(result)
+    return recommendations
