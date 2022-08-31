@@ -1,6 +1,7 @@
 from webapp import app, db
 from flask import render_template, redirect, url_for, flash
 from webapp.forms import CalculatorForm, LoginForm
+from webapp.algos import calculate, recommend
 
 @app.route('/')
 @app.route('/home')
@@ -23,6 +24,11 @@ def calculator():
     form = CalculatorForm()
     return render_template('calculator.html', title='Energy Calculator', form=form)
 
+@app.route("/result")
+def result():
+    return render_template('result.html')
+
+# EXPERIMENTAL
 @app.route('/before')
 def before():
     return render_template('before.html')
@@ -31,6 +37,13 @@ def before():
 def after():
     return render_template('after.html')
 
-@app.route("/result")
-def result():
-    return render_template('result.html')
+@app.route("/algo")
+def algo():
+    from webapp.models import Appliance
+    appliances = Appliance.query.all()
+    recommendations = []
+    for appliance in appliances:
+        print(appliance)
+        result = recommend(appliance, 5)
+        recommendations.append(result)
+    return recommendations
