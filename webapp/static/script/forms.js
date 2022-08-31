@@ -2,7 +2,10 @@ var i = 0
 const forms = document.getElementById("forms")
 function addForm() {
     i += 1
-    forms.innerHTML += `
+    var form = document.createElement("div")
+    form.className = "form"
+    forms.appendChild(form)
+    form.innerHTML += `
     <div class="bg-white border rounded py-3 px-3 my-3">
     <div class="form-group my-2">
         <label for="appliance-${i}" class="form-control-label">Appliance</label>
@@ -41,8 +44,6 @@ function addForm() {
         })()}
     </div>
     `
-    // var newForm = new DOMParser().parseFromString(newFormString, "text/xml")
-    // forms.append(newForm)
     window.scrollTo(0, document.body.scrollHeight)
 }
 addForm()
