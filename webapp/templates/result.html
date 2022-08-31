@@ -28,26 +28,26 @@
 
         // Create the data table.
         var data = new google.visualization.DataTable();
-        data.addColumn('string', 'Topping');
-        data.addColumn('number', 'Slices');
+        data.addColumn('string', 'Appliances');
+        data.addColumn('number', 'kWh');
         data.addRows([
-          ['Mushrooms', 3],
-          ['Onions', 1],
-          ['Olives', 1],
-          ['Zucchini', 1],
-          ['Pepperoni', 2]
+          ['Television', 3],
+          ['Fridge', 1],
+          ['Air Conditioner', 1],
+          ['Washing Machine', 1],
         ]);
 
         // Set chart options
-        var options = {'title':'How Much Pizza I Ate Last Night',
-                       'width':400,
-                       'height':300};
+        var options = {'title':'Energy Consumption Based on Appliance',
+                       'width':800,
+                       'height':600};
 
         // Instantiate and draw our chart, passing in some options.
-        var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+        var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
         chart.draw(data, options);
       }
     </script>
+    <div id="chart_div"></div>
     </div>
     <div class="mainstate">
 
