@@ -1,7 +1,6 @@
 from webapp import app, db
 from flask import render_template, redirect, url_for, flash
 from webapp.forms import CalculatorForm
-import matplotlib.pyplot as plt
 
 @app.route('/')
 @app.route('/home')
