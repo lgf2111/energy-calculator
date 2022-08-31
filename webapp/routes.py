@@ -43,7 +43,6 @@ def algo():
     appliances = Appliance.query.all()
     recommendations = []
     for appliance in appliances:
-        print(appliance)
         result = recommend(appliance, 5)
         recommendations.append(result)
     return recommendations

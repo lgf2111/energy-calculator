@@ -16,77 +16,49 @@ def recommend(appliance, hours):
 
         amount = hours * day_to_year
         watt = amount * given_watt
-        price = watt * cost_per_kilowatt
+        price = round(watt * cost_per_kilowatt, 2)
 
         return hours, amount, watt, price
 
+    remark = ""
 
     if appliance.name == "Television":
-        if hours > 4:
-            remark = "Limit TV to 4 hours"
-            time, amount, watt, price = calculate_savables(4, appliance.watts)
-
-        elif hours > 2:
-            remark = "Limit TV to 2 hours"
-            time, amount, watt, price = calculate_savables(2, appliance.watts)
-
-        elif hours <= 2:
+        for limit in range(4, 0, -2):
+            if hours > limit:
+                remark = f"Limit Television to {limit} hours"
+                time, amount, watt, price = calculate_savables(limit, appliance.watts)
+                break
+        if not remark:
             remark = "Good Job!"
-            time, amount, watt, price = calculate_savables(0, appliance.watts)
-    
+            time, amount, watt, price = calculate_savables(0, appliance.watts)    
 
     elif appliance.name == "Fridge":
-        # TODO: shldnt be calculating savables
         if hours > 0:
             remark = "Changing to a more efficient brand or reducing the temperature can reduce its energy consumption"
             time, amount, watt, price = calculate_savables(hours, appliance.watts)
     
-
     elif appliance.name == "Air-Conditioner":
-        if hours > 10:
-            remark = "limit aircon to 10 hours"
-            time, amount, watt, price = calculate_savables(10, appliance.watts)
-            return  {"remark": remark, "time": time, "amount": amount, "watt": watt, "price": price}
-
-        elif hours > 8:
-            remark = "limit aircon to 8 hours"
-            time, amount, watt, price = calculate_savables(8, appliance.watts)
-            return  {"remark": remark, "time": time, "amount": amount, "watt": watt, "price": price}
-
-        elif hours > 6:
-            remark = "limit aircon to 6 hours"
-            time, amount, watt, price = calculate_savables(6, appliance.watts)
-            return  {"remark": remark, "time": time, "amount": amount, "watt": watt, "price": price}
-
-        elif hours > 4:
-            remark = "limit aircon to 4 hours"
-            time, amount, watt, price = calculate_savables(4, appliance.watts)
-            return  {"remark": remark, "time": time, "amount": amount, "watt": watt, "price": price}
-
-        elif hours > 2 :
-            remark = "limit aircon to 2 hours"
-            time, amount, watt, price = calculate_savables(2, appliance.watts)
-            return  {"remark": remark, "time": time, "amount": amount, "watt": watt, "price": price}
-
-        # TODO: shldnt be calculating savables
-        elif hours <= 2:
-            remark = "Good Job!"
-            time, amount, watt, price = calculate_savables(2, appliance.watts)
-            return  {"remark": remark, "time": time, "amount": amount, "watt": watt, "price": price}
-    
+        for limit in range(10, 0, -2):
+            if hours > limit:
+                remark = f"Limit Air-Conditioner to {limit} hours"
+                time, amount, watt, price = calculate_savables(limit, appliance.watts)
+                break
+        if not remark:
+            remark = f"Good Job!"
+            time, amount, watt, price = calculate_savables(limit, appliance.watts)    
 
     elif appliance.name == "Washing Machine":
-        if hours > 3:
-            remark = "decrease the number of times of washing to 3"
-            time, amount, watt, price = calculate_savables(3, appliance.watts)
-
-        elif hours > 2:
-            remark = "decrease the number of times of washing to 2"
-            time, amount, watt, price = calculate_savables(2, appliance.watts)
-
-        elif hours <= 2:
-            remark = "Decrease the time spent washing per load"
-            time, amount, watt, price = calculate_savables(2, 50)
+        for limit in range(3, 0, -1):
+            if limit == 1:
+                remark = 'Decrese the time spent washing per load'
+                time, amount, watt, price = calculate_savables(limit, 50)
+            if hours > limit:
+                remark = f"Decrease the number of times of washing to {limit}"
+                time, amount, watt, price = calculate_savables(limit, appliance.watts)
+            break
+        if not remark:
+            remark = f"Good Job!"
+            time, amount, watt, price = calculate_savables(limit, appliance.watts)    
 
     return {"appliance": appliance.name, "brand": appliance.brand.name,
             "time": time, "amount": amount, "watt": watt, "price": price}
