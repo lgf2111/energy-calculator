@@ -1,5 +1,6 @@
+from crypt import methods
 from webapp import app, db
-from flask import render_template, redirect, url_for, flash
+from flask import render_template, redirect, url_for, flash, request
 from webapp.forms import CalculatorForm, LoginForm
 from webapp.algos import calculate, recommend
 from flask_login import current_user, logout_user
@@ -26,17 +27,11 @@ def logout():
     current_user.logout_user
     return redirect('home')
 
-@app.route('/calculator/<int:amt>')
-def calculator(amt):
-    if amt == 0: return redirect(url_for('add_appliance', amt=amt))
-    form = CalculatorForm()
-    forms = [form for _ in range(amt)]
-    return render_template('calculator copy.html', title='Energy Calculator', forms=forms, amt=amt)
-
-@app.route('/calculator/<int:amt>/add')
-def add_appliance(amt):
-    return redirect(url_for('calculator', amt=amt+1))
-
+@app.route('/calculator', methods=["GET", "POST"])
+def calculator():
+    if request.method == "POST":
+        return request.form
+    return render_template('calculator.html', title='Energy Calculator')
 
 @app.route("/result")
 def result():

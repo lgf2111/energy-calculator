@@ -1,83 +1,17 @@
 {% extends "includes/base.html" %} 
 {% block content %}
-<div class="container bg-white my-3 border rounded">
+<div class="container my-3">
     <form action="" method="post">
+        <script src="{{ url_for('static', filename='script/forms.js') }}" defer></script>
         <script src="{{ url_for('static', filename='script/filter-brands.js') }}" defer></script>
-        {% for form in forms %}
-        {{ form.hidden_tag() }}
-    
-        <div class="form-group my-2">
-            {{ form.appliance.label(class="form-control-label") }} 
-            {% if form.appliance.errors %} 
-                {{ form.appliance(class="form-control form-control-lg is-invalid", id="appliance") }}
-                <div class="invalid-feedback">
-                    {% for error in form.appliance.errors %}
-                        <span>{{ error }}</span>
-                    {% endfor %}
-                </div>
-            {% else %} 
-                {{ form.appliance(class="form-control form-control-lg", id="appliance") }} 
-            {% endif %}
-        </div>
-    
-        <div class="form-group my-2">
-            {{ form.brand.label(class="form-control-label") }} 
-            {% if form.brand.errors %} 
-                {{ form.brand(class="form-control form-control-lg is-invalid", id="brand") }}
-                <div class="invalid-feedback">
-                {% for error in form.brand.errors %}
-                    <span>{{ error }}</span>
-                {% endfor %}
-                </div>
-            {% else %} 
-                {{ form.brand(class="form-control form-control-lg", id="brand") }} 
-            {% endif %}
-        </div>
-    
-        <div class="form-group">
-        {{ form.usage.label(class="form-control-label") }} 
-        {% if form.usage.errors %} 
-            {{ form.usage(class="form-control form-control-lg is-invalid") }}
-            <div class="invalid-feedback">
-            {% for error in form.usage.errors %}
-                <span>{{ error }}</span>
-            {% endfor %}
+        <div id="forms"></div>
+        <div class="container-fluid d-flex justify-content-center mb-5">
+            <div class="">
+                <button type="button" class="btn btn-primary mx-2" onclick="addForm()">Add</button>
+                <input type="submit" class="btn btn-success mx-2" value="Calculate" name="submit">
             </div>
-        {% else %} 
-            {{ form.usage(class="form-control form-control-lg") }} 
-        {% endif %}
         </div>
-        <div class="form-group radio my-2">
-            {{ form.ticks.label(class="form-control-label") }} 
-            {% if form.ticks.errors %} 
-                {% for option in form.ticks %}
-                <div class="form-check">
-                    {{ option(class="form-check-input") }}
-                    {{ option.label(class="form-check-label text-success bg-warning rounded ticks") }}
-                </div>
-                {% endfor %}
-        <div class="invalid-feedback">
-                {% for error in form.ticks.errors %}
-                    <span>{{ error }}</span>
-                {% endfor %}
-                </div>
-            {% else %} 
-                {% for option in form.ticks %}
-                    <div class="form-check">
-                        {{ option(class="form-check-input") }}
-                        {{ option.label(class="form-check-label text-success bg-warning rounded ticks") }}
-                    </div>
-                {% endfor %}
-            {% endif %}
-        </div>
-        {% endfor %}
     </form>
-</div>
-<div class="container-fluid d-flex justify-content-center mb-5">
-    <div class="">
-        <a class="btn btn-primary mx-2" href="{{ url_for('add_appliance', amt=amt) }}" type="submit">Add</a>
-        <a class="btn btn-success mx-2" href="#" role="button">Calculate</a>
-    </div>
 </div>
 
 
