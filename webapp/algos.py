@@ -63,3 +63,8 @@ def recommend(appliance, hours):
     return {"appliance": appliance.name, "brand": appliance.brand.name,
             "time": time, "amount": amount, "watt": watt, "price": price}
     
+def cal1(x):
+    height = (x * 100) + 100 
+
+def cal2(x):
+    width = (x * 75) + 125
