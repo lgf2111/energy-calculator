@@ -1,6 +1,7 @@
 from webapp import app, db
 from flask import render_template, redirect, url_for, flash
 from webapp.forms import CalculatorForm, LoginForm
+from flask_login import current_user, logout_user
 
 @app.route('/')
 @app.route('/home')
@@ -34,3 +35,8 @@ def after():
 @app.route("/result")
 def result():
     return render_template('result.html')
+
+@app.route('/logout')
+def logout():
+    current_user.logout_user
+    return redirect('home')

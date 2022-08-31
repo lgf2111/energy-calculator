@@ -1,0 +1,62 @@
+main {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    background: url(../src/bg.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.content {
+    max-width: 650px;
+    margin: 60px 100px;
+}
+
+.content .info h2{
+    color: #226a80;
+    font-size: 65px;
+    font-weight: 880;
+    letter-spacing: 2px;
+    line-height: 60px;
+}
+
+.content .info h2 span {
+    color: #fff;
+    font-size: 50px;
+    font-weight: 600;
+}
+
+.contact .info p {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.content .btn {
+    background: #226a80 !important;
+    letter-spacing: 1px;
+    border-radius: 5px;
+    transition-property: background;
+}
+
+.content .btn:hover {
+    background: #0c4f60;
+}
+
+.media-icons {
+    margin-bottom: 10em !important;
+}
+
+.media-icons a {
+    font-size: 25px;
+    transition: 0.3s;
+    transition-property: transform;
+    color: #222 !important;
+}
+
+.media-icons a:not(:last-child) {
+    margin-right: 60px;
+}
+
+.media-icons a:hover {
+    transform: scale(1.5) !important;
+}
