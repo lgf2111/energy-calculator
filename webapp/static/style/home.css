@@ -14,12 +14,15 @@ main {
 .content {
     max-width: 650px;
     margin: 60px 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(0, 40%);
 }
 
 .content .info h2{
     color: #226a80;
     font-size: 65px;
-    font-weight: 880;
     letter-spacing: 2px;
     line-height: 60px;
 }
