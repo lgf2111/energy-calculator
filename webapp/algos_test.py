@@ -13,7 +13,7 @@ def test_calculate():
 #     hours = {"television": 2, "fridge": 2, "air_conditioner": 2, "washing_machine": 2}
 #     recommendations = recommend(hours)
     
-#     assert recommendations == ({"television": {"reco": "Great Job!", "savetime": "", "saveamt": "", "savewatt": "", "saveprice": ""},
-#                                 "fridge": {"reco": "Changing to a more efficient brand or reducing the temperature can reduce its energy consumption", "savetime": "", "saveamt": "", "savewatt": "", "saveprice": ""},
-#                               "air_conditioner": {"reco": "Good Job!", "savetime": "", "saveamt": "", "savewatt": "", "saveprice": ""},
-#                                 "washing_machine": {"reco": "Decrease the time spent washing per load", "savetime": "", "saveamt": "", "savewatt": "", "saveprice": ""}}), recommendations
+    # assert recommendations == ({"television": {"reco": "Great Job!", "savetime": "", "saveamt": "", "savewatt": "", "saveprice": ""},
+    #                             "fridge": {"reco": "Changing to a more efficient brand or reducing the temperature can reduce its energy consumption", "savetime": "", "saveamt": "", "savewatt": "", "saveprice": ""},
+    #                           "air_conditioner": {"reco": "Good Job!", "savetime": "", "saveamt": "", "savewatt": "", "saveprice": ""},
+    #                             "washing_machine": {"reco": "Decrease the time spent washing per load", "savetime": "", "saveamt": "", "savewatt": "", "saveprice": ""}}), recommendations
