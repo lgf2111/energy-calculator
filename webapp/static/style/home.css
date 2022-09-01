@@ -42,16 +42,16 @@ main {
 /*button animations for navbar*/
 .content .info a {
     border-radius: 4px;
-    box-shadow: inset 0 0 0 0 #076f8c !important;
-    transition: ease-out 0.3s !important;
+    box-shadow: inset 0 0 0 0 #076f8c ;
+    transition: ease-out 0.3s ;
     width: 120px;
-    color: #000 !important;
+    color: #000 !important ;
     height: 40px;
 }
 
 .content .info a:hover {
-    box-shadow: inset 120px 0 0 0 #076f8c !important;
-    color: #fff !important;
+    box-shadow: inset 120px 0 0 0 #076f8c ;
+    color: #fff  ;
 }
 
 .content .btn:hover {
@@ -59,8 +59,8 @@ main {
 }
 
 .media-icons {
-    margin-bottom: -1em !important;
-    margin-right: 2em !important;
+    margin-bottom: 2em !important;
+    margin-right: 2em !important ;
 
 }
 
@@ -68,7 +68,7 @@ main {
     font-size: 25px;
     transition: 0.3s;
     transition-property: transform;
-    color: #222 !important;
+    color: #222 ;
 }
 
 .media-icons a:not(:last-child) {
@@ -76,19 +76,19 @@ main {
 }
 
 .media-icons a:hover {
-    transform: scale(1.5) !important;
+    transform: scale(1.5) ;
 }
 
 .media-icons .bi-facebook:hover {
-    color: #4c68d7 !important;
+    color: #4c68d7 ;
 }
 
 .media-icons .bi-twitter:hover {
-    color: #00ACEE !important;
+    color: #00ACEE ;
 }
 
 .media-icons .bi-instagram:hover {
-    color: #bc2a8d !important;
+    color: #bc2a8d ;
 }
 
 .block {
@@ -99,4 +99,13 @@ main {
     top: 0;
     z-index: 1;
     filter: opacity(.4);
+}
+
+iframe{
+    width: 900px;
+    height: 1000px;
+}
+
+.nasa{
+    text-align: center;
 }
