@@ -31,17 +31,14 @@ def calculator():
     if request.method == "POST":
         request_form = request.form
         forms = []
-        i = 1
-        while True:
+        total = int(request_form.get("index"))
+        for i in range(1, total+1):
             appliance = request_form.get(f"appliance-{i}")
             brand = request_form.get(f"brand-{i}")
             usage = request_form.get(f"usage-{i}")
             ticks = request_form.get(f"ticks-{i}")
             if all([appliance, brand, usage, ticks]):
                 forms.append({"appliance": appliance, "brand": brand, "usage": int(usage), "ticks": int(ticks)})
-                i += 1
-            else:
-                break
         results.append(forms)
         return redirect(url_for('result'))
     return render_template('calculator.html', title='Calculator')
