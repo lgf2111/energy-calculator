@@ -13,8 +13,8 @@ def home():
     key, value = [[] for _ in range(2)]
     for d in data:
         key.append(d['Key'])
-        value.append(d['Value'])
-    return render_template('home.html', key=key, value=value) """
+        value.append(d['Value'])"""
+    return render_template('home.html') 
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
