@@ -1,6 +1,5 @@
 Frontend
 - Base
-    - Link tab icon properly with url_for
     - Fix navbar on top
 - Home
     - Social Media icons are blocking, move it to the most bottom
@@ -16,6 +15,7 @@ Backend
     - Use api and make graphs if have time
         - Using 3rd party api is one of the best way to get additional points
 - Calculator (JS)
-    - 
+    - Delete form function not done
+    - Calculate button not done
 - Login
     - Keeps showing login failed for no reason
