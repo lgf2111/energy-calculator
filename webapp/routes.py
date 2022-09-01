@@ -25,15 +25,32 @@ def logout():
     current_user.logout_user
     return redirect('home')
 
+results = []
 @app.route('/calculator', methods=["GET", "POST"])
 def calculator():
     if request.method == "POST":
-        return request.form
+        request_form = request.form
+        forms = []
+        i = 1
+        while True:
+            appliance = request_form.get(f"appliance-{i}")
+            brand = request_form.get(f"brand-{i}")
+            usage = request_form.get(f"usage-{i}")
+            ticks = request_form.get(f"ticks-{i}")
+            if all([appliance, brand, usage, ticks]):
+                forms.append({"appliance": appliance, "brand": brand, "usage": int(usage), "ticks": int(ticks)})
+                i += 1
+            else:
+                break
+        results.append(forms)
+        return redirect(url_for('result'))
     return render_template('calculator.html', title='Calculator')
 
 @app.route("/result")
 def result():
-    return render_template('result.html')
+    result = results.pop()
+    total_energy, total_amount = calculate(result)
+    return render_template('result.html', result=result)
 
 # EXPERIMENTAL
 @app.route('/before')
