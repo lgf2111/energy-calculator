@@ -85,9 +85,9 @@ def cal2(x):
     width = (x * 75) + 125
 
            
-
+""" 
 def get_data(path):
     path = os.path.join(app.root_path, 'static', *path.replace('\\','/').split('/'))
     with open(path, 'r') as f:
         data = json.loads(f.read())
-    return data
+    return data """
