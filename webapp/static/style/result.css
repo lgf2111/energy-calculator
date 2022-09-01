@@ -1,3 +1,8 @@
+body {
+    overflow-x: hidden !important;
+    margin-bottom: 2em;
+}
+
 h1 {
     text-align: center;
     padding-top: 3%;
@@ -12,24 +17,15 @@ h3 {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 .graph {
-    padding-left: 5%;
+    margin-left: 5%;
 }
 
 .mainstate {
-    padding-left: 1%;
-    padding-right: 13%;
+    margin-left: 1%;
+    margin-right: 13%;
     font-size: 21px;
-}
-
-.second {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.notmainstate {
-    align-items: right;
 }
