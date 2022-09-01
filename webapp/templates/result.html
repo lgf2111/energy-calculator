@@ -1,18 +1,19 @@
 {% extends "includes/base.html" %} 
 {% block content %}
+
 <head>
     <link rel="stylesheet" href="../static/style/result.css ">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <h1>Result Page</h1>
+    <h3>Let's take a look at your power consumption!</h3>
 </head>
 
 <body>
-    <div class="text pt-5">
-        <h1>Result Page</h1>
-        <h3>Let's take a look at your power consumption!</h3>
-    </div>
-
+    {{ calculations }} <br><br>
+    {{ recommendations }} <br><br>
     <div class="graph">
-    <!--Load the AJAX API-->
+        <!--Load the AJAX API-->
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
         var chart1 = '{{charts[0]}}'
@@ -46,8 +47,8 @@
 
         // Set chart options
         var options = {'title':'Energy Consumption Based on Appliance',
-                       'width':500,
-                       'height':400,
+                       'width':800,
+                       'height':600,
                        'colors': ['#8BC6FC'],
                        'is3D': true
                         };
@@ -65,7 +66,7 @@
             Based on the information that you have entered, you can see, with the graph provided, the appliances that have the most to least power draw in the course of a year. Below you will be able to find ways to both save the environment and reduce the amount you spend on power.
         </div>
     </div>
-    <div class="second row">
+    <div class="second">
         <div class="graph">
             <!--Load the AJAX API-->
         <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -82,8 +83,8 @@
             data.addRows(chart2);
 
             var options = {
-                'width': 500,
-                'height':400,
+                'width':800,
+                'height':600,
                 title: 'Energy Consumption Before and After',
                 hAxis: {
                 title: 'Appliances',
@@ -107,6 +108,21 @@
         </div>
         <div>
             <h3>Now, how can we help you reduce your usage? We can start with seeing how reducing your appliance usage can affect your electricity usage</h3>
+        </div>
+        <div class="DynoClass">
+            {% for recommendation in recommendations %}
+                <span class="statement">
+                    {{ loop.index }}) {{ recommendation["remark"] }}.
+                </span>
+            {% endfor %}
+            TV:
+            Hmm, it seems that your TV is consuming (-) kWh. If you stick to (-) hours, you could save ( original wattage - calculated saving wattage ) kWh, so why not switch to books instead!
+            Fridge:
+            Your Fridge requires (-) kWh annually, if you were to increase the temperature, and decrease the cooling, you could save ( original wattage (-) calculated saving wattage ) kWh.
+            Air Conditioning:
+            It looks like your Air Conditioning expends (-) watts. If you used it (-) hours less, you could save up to ( original wattage (-) calculated saving wattage ) kWh and have a big impact on the environment!
+            Washing Machine:
+            Did you know that all that washing you do, it takes up (-) watts of power? If you reduced it by just (-) times, you could enjoy energy savings of ( original wattage (-) calculated saving wattage ) kWh per annum.
         </div>
         <div class="graph" id="chart_div2"></div>
     </div>
@@ -136,8 +152,8 @@
 
         // Set chart options
         var options = {
-                'width':500,
-                'height':400,
+                'width':800,
+                'height':600,
                 title: 'Savings',
                 hAxis: {
                 title: 'Appliances',
@@ -165,5 +181,11 @@
             With that small change to your appliance usage, let's take a look at how much money you could save annually!
         </div>
     </div>
+
 </body>
+
+
+
+
+
 {% endblock %}
