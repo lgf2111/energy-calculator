@@ -23,19 +23,6 @@
     </div>
 </main>
 
-<!-- <div class="content2 d-flex justify-content-evenly " >
-    <div class ="info2">
-        <h2 class="text-uppercase mb-3 fw-bold"><span>We need you!</span></h2>
-        <p class="mb-4 text-uppercase">Saving the environment begins with contribuition  made by individuals like you and Energy Calculator will help to make that possible!</p>
-        <p class="mb-4 text-uppercase">Energy calculator will help you make enviromentally friendly choices when it comes to your appliances at home!</p>
-        <a href="calculator" class="btn btn-light p-2 text-light text-uppercase">Click for calculator</a>
-    </div>
-
-    <div class="text-right">
-        <img  src="{{ url_for('static', filename='src/logo.png') }}"></img>
-    </div>
-    
-</div> -->
 <div class="container d-flex justify-content-between align-items-center">
     <div class ="info2">
         <h2 class="text-uppercase mb-3 fw-bold"><span>We need you!</span></h2>
@@ -44,22 +31,23 @@
         <a href="calculator" class="btn btn-light p-2 text-dark text-uppercase">Click for calculator</a>
     </div>
     <div class="">
-        <img src="{{ url_for('static', filename='src/logo.png') }}" width="180"></img>
+        <img src="{{ url_for('static', filename='src/logo.png') }}" width="180"/>
     </div>
 </div>
-
 
 <div class="content3" >
     <div class ="info3">
         <h2 class="text-uppercase mb-3 fw-bold"><span>The time is now!</span></h2>
         <p class="mb-4 text-uppercase">The interactive board by NASA below shows the continious deterioration of the environment over a span of a few decades due to climate change.</p>
         <p class="mb-4 text-uppercase">This furthur brings across the urgency for us to act now and stop climate change once and for all! </p>
-       
     </div>
-
-    
 </div>
-{% include 'includes/graph.html' %}
+
+<div class="content4">
+    <h1 class="text-uppercase mb-3 fw-bold font-5 text-white" style="margin-left: 330px">The Graph</h1>
+    <p class="mb-4 text-uppercase">This graph refers to the total electricity consumption by end users, including (embedded) consumption by autoproducers.  From Jan 2016, data have incorporated consumption of output from solar generation.</p>
+    {% include 'includes/graph.html' %}
+</div>
 
 <div class = "nasa">
     <iframe src="https://climate.nasa.gov/interactives/climate_time_machine"></iframe>
