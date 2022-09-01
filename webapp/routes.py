@@ -48,9 +48,12 @@ def calculator():
 
 @app.route("/result")
 def result():
-    result = results.pop()
-    total_energy, total_amount = calculate(result)
-    return render_template('result.html', result=result)
+    result = results.pop() if results else []
+    calculations = calculate(result)
+    recommendations = []
+    for k in calculations:
+        recommendations.append(recommend(k, calculations[k]["usage"]))
+    return render_template('result.html', calculations=calculations, recommendations=recommendations)
 
 # EXPERIMENTAL
 @app.route('/before')
