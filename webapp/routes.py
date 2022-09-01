@@ -17,8 +17,6 @@ def login():
         if form.email.data == "admin@gmail.com" and form.password.data == "password123":
             flash('Login Successful!', 'success')
             return redirect(url_for('admin.index'))
-        else:
-            flash("Login Failed", 'danger')
     return render_template('login.html', title='Login', form=form)
 
 @app.route('/logout')
