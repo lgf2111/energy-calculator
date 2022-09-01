@@ -39,7 +39,7 @@ def recommend(appliance, hours):
 
     elif appliance.name == "Fridge":
         if hours > 0:
-            time, amount, watt, price = calculate_savables(hours, appliance.watts)
+            time, amount, watt, price = calculate_savables(hours, appliance.watts * 0.82)
             watto = watt/1000
             watto = round(watto)
             savesave = watto - appliance.watts
