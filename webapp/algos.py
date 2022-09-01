@@ -30,8 +30,8 @@ def recommend(appliance, hours):
     if appliance.name == "Television":
         for limit in range(4, 0, -2):
             if hours > limit:
-                remark = f"Limit Television to {limit} hours"
                 time, amount, watt, price = calculate_savables(limit, appliance.watts)
+                remark = f"\nHmm, it seems that you are watching TV for {hours} hours. If you stick to {limit} hours, you could save {appliance.watts} kWh, so why not switch to books instead"
                 break
         if not remark:
             remark = "Good Job!"
@@ -39,14 +39,20 @@ def recommend(appliance, hours):
 
     elif appliance.name == "Fridge":
         if hours > 0:
-            remark = "Changing to a more efficient brand or reducing the temperature can reduce its energy consumption"
-            time, amount, watt, price = calculate_savables(hours, appliance.watts)
+            time, amount, watt, price = calculate_savables(hours, appliance.watts * 0.82)
+            watto = watt/1000
+            watto = round(watto)
+            savesave = watto - appliance.watts
+            remark = f"\nYour Fridge is using {watto} kWh right now, if you were to increase the temperature, and decrease the cooling, you could save {savesave} kWh"
+           
     
     elif appliance.name == "Air-Conditioner":
         for limit in range(10, 0, -2):
             if hours > limit:
-                remark = f"Limit Air-Conditioner to {limit} hours"
                 time, amount, watt, price = calculate_savables(limit, appliance.watts)
+                watto = watt/1000
+                watto = round(watto)
+                remark = f"\nIt looks like your Air Conditioning expends {watto} kWh. If you used it {limit} hours less, you could save up to ${price} and have a big impact on the environment"
                 break
         if not remark:
             remark = f"Good Job!"
@@ -55,11 +61,14 @@ def recommend(appliance, hours):
     elif appliance.name == "Washing Machine":
         for limit in range(3, 0, -1):
             if limit == 1:
-                remark = 'Decrese the time spent washing per load'
+                remark = "\nYour washing rates are pretty good but you could have an even bigger impact if you decrease the time you spend washing each load@"
                 time, amount, watt, price = calculate_savables(limit, 50)
             if hours > limit:
-                remark = f"Decrease the number of times of washing to {limit}"
                 time, amount, watt, price = calculate_savables(limit, appliance.watts)
+                watto = watt/1000
+                watto = round(watto)
+                remark = f"\nDid you know that all that washing you do, it takes up {watto} watts of power? If you reduced it by just {limit} times, you could enjoy energy savings of ${price} per annum"
+                
             break
         if not remark:
             remark = f"Good Job!"
@@ -69,6 +78,14 @@ def recommend(appliance, hours):
             "time": time, "amount": amount, "watt": watt, "price": price,
             "remark": remark}
     
+def cal1(x):
+    height = (x * 100) + 100 
+
+def cal2(x):
+    width = (x * 75) + 125
+
+           
+
 def get_data(path):
     path = os.path.join(app.root_path, 'static', *path.replace('\\','/').split('/'))
     with open(path, 'r') as f:
