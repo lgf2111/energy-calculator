@@ -52,7 +52,7 @@ function addForm() {
         })()}
     </div>
     <div class="remove text-right">
-        <button type="button" class="btn btn-danger bi bi-trash-fill" onclick= "deleteForm(${i})"> Remove</button>
+        <button type="button" class="btn btn-danger" onclick= "deleteForm(${i})"><i class="bi bi-file-earmark-minus"></i> Remove</button>
     </div>
     `
     document.getElementById("index").value = i
