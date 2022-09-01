@@ -8,7 +8,7 @@ from flask_login import current_user, logout_user
 @app.route('/home', methods=['GET', 'POST']) 
 def home():
     form = LoginForm()
-    if form.validate_on_submit:
+    if form.validate_on_submit():
         if form.email.data == "admin@gmail.com" and form.password.data == "password123":
             flash('Login Successful!', 'success')
             return redirect(url_for('admin.index'))

@@ -1,6 +1,6 @@
 from webapp import db
 from datetime import datetime
-from flask_admin import BaseView, expose
+
 
 class Appliance(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -20,8 +20,3 @@ class Brand(db.Model):
     
     def __repr__(self):
         return f"Brand('{self.name}', '{self.date_added}')"
-
-class LogoutView(BaseView):
-    @expose('/')
-    def index(self):
-        return self.render('/home.html')
