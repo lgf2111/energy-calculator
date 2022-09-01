@@ -15,3 +15,44 @@
     /* z-index: ; */
     background-color: white;
 }
+
+/*navbar link animations*/
+.navbar-nav {
+  position: relative;
+}
+
+.navbar-nav .nav-item a {
+  position: relative !important;
+}
+
+nav .container-fluid .collapse .navbar-nav .nav-item a:after {
+  content: "";
+  position: absolute;
+  background-color: #000;
+  height: 3px;
+  width: 0;
+  left: 0;
+  bottom: -10px;
+  transition: 0.3s;
+}
+
+a:hover:after {
+  width: 100% !important;
+}
+
+.btn-danger{
+  margin-left:auto;
+  margin-right:0;
+}
+
+.block {
+  width: 100vw;
+  height: 100vh;
+  background: #000;
+  position: fixed;
+}
+
+.pad {
+  /* background: #000; */
+  height: 11vh;
+}

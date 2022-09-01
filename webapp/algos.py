@@ -63,7 +63,8 @@ def recommend(appliance, hours):
             time, amount, watt, price = calculate_savables(limit, appliance.watts)    
 
     return {"appliance": appliance.name, "brand": appliance.brand.name,
-            "time": time, "amount": amount, "watt": watt, "price": price}
+            "time": time, "amount": amount, "watt": watt, "price": price,
+            "remark": remark}
     
 def cal1(x):
     height = (x * 100) + 100 
