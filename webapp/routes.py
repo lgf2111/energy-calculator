@@ -1,13 +1,15 @@
 from webapp import app, db
 from flask import render_template, redirect, url_for, flash, request, jsonify
 from webapp.forms import CalculatorForm, LoginForm
-from webapp.algos import calculate, recommend
+from webapp.algos import calculate, recommend, get_data
 from flask_login import current_user, logout_user
+import json
 
 @app.route('/')
 @app.route('/home')
 def home():
-    return render_template('home.html')
+    data = get_data('json/energy.json')
+    return render_template('home.html', data=data)
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
@@ -32,7 +34,7 @@ def calculator():
         return redirect(url_for('calculator_api'), code=307)
     return render_template('calculator.html', title='Calculator')
 
-@app.route("/result", methods=["GET","POST"])
+@app.route("/result")
 def result():
     if request.method == "GET":
         result = glob_results.pop() if glob_results else []
@@ -48,7 +50,7 @@ def result():
         charts.append([{"v": '', "f": ''}, round(sum(_["amount"] for _ in calculations.values())*365, 2), round(sum(_["price"] for _ in recommendations), 2)])
         return render_template('result.html', calculations=calculations, recommendations=recommendations, charts=charts)
 
-# API
+# api
 @app.route("/calculator/api", methods=["GET","POST"])
 def calculator_api():
     if request.method == "POST":
