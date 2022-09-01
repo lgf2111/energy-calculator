@@ -1,4 +1,4 @@
-# from crypt import methods 
+from crypt import methods 
 from webapp import app, db
 from flask import render_template, redirect, url_for, flash, request
 from webapp.forms import CalculatorForm, LoginForm
