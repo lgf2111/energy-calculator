@@ -85,9 +85,7 @@ def cal2(x):
     width = (x * 75) + 125
 
            
-""" 
+
 def get_data(path):
-    path = os.path.join(app.root_path, 'static', *path.replace('\\','/').split('/'))
-    with open(path, 'r') as f:
-        data = json.loads(f.read())
-    return data """
+    data =[{ "Key": "2005", "Value": "35489.3" },{ "Key": "2006", "Value": "36801.8" },{ "Key": "2007", "Value": "38304.9" },{ "Key": "2008", "Value": "38986.9" },{ "Key": "2009", "Value": "38822.9" },{ "Key": "2010", "Value": "42251.7" },{ "Key": "2011", "Value": "43007.1" },{ "Key": "2012", "Value": "44200.7" },{ "Key": "2013", "Value": "44948.8" },{ "Key": "2014", "Value": "46403" },{ "Key": "2015", "Value": "47513.9" },{ "Key": "2016", "Value": "48623.1" },{ "Key": "2017", "Value": "49637.8" },{ "Key": "2018", "Value": "50438.2" },{ "Key": "2019", "Value": "51713.3" },{ "Key": "2020", "Value": "50760.5" }]
+    return data
