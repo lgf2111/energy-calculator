@@ -50,16 +50,15 @@ function addForm() {
     </div>
     <div class="remove text-right">
         <button type="button" class="btn btn-danger " 
-        onclick= "forms.parentNode.removeChild(form);"
+        onclick= "delForm()"
         >Remove</button>
     </div>
     `
     window.scrollTo(0, document.body.scrollHeight)
 }
 
-function delForm(x){
-    var element = document.getElementById(x);
-    element.parentNode.removeChild(element);
+function delForm(){
+    forms.parentNode.removeChild(form);
     
 }
 
