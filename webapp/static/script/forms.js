@@ -1,9 +1,14 @@
 var i = 0
 const forms = document.getElementById("forms")
+var form = document.createElement("div")
+form.className = "form"
+
+
 function addForm() {
     i += 1
-    var form = document.createElement("div")
-    form.className = "form"
+    form.setAttribute("id", `form ${i}`)
+    console.log(form.id)
+    // var form = document.createElement("div")
     forms.appendChild(form)
     form.innerHTML += `
     <div class="bg-white border rounded py-3 px-3 my-3">
@@ -43,7 +48,29 @@ function addForm() {
             return output
         })()}
     </div>
+    <div class="remove text-right">
+        <button type="button" class="btn btn-danger " 
+        onclick= "forms.parentNode.removeChild(form);"
+        >Remove</button>
+    </div>
     `
     window.scrollTo(0, document.body.scrollHeight)
 }
-addForm()
+
+function delForm(x){
+    var element = document.getElementById(x);
+    element.parentNode.removeChild(element);
+    
+}
+
+function clearForm(){
+    i = 0
+    window.location.replace(window.location.href);
+    
+}
+
+addForm() //addForm() initalise the first form
+
+
+
+

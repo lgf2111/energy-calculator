@@ -1,3 +1,5 @@
+/* This is for calculator page */
+
 * {
     font-family: "Poppins", sans-serif !important;
 }
@@ -34,4 +36,9 @@ nav .container-fluid .collapse .navbar-nav .nav-item a:after {
 
 a:hover:after {
     width: 100% !important;
+}
+
+.btn-danger{
+    margin-left:auto;
+    margin-right:0;
 }
