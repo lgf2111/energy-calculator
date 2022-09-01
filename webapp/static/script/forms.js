@@ -25,6 +25,11 @@ function addForm() {
     <div class="form-group my-2">
         <label for="brand-${i}" class="form-control-label">Brand</label>
         <select name="brand-${i}" id="brand-${i}" class="form-control brand" required>
+            <option value="Panasonic">Panasonic</option>
+            <option value="Electrolux">Electrolux</option>
+            <option value="Mitsubishi">Mitsubishi</option>
+            <option value="Samsung">Samsung</option>
+            <option value="Others">Others</option>
         </select>
     </div>
             
