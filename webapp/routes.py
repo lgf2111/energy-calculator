@@ -57,6 +57,6 @@ def result():
         [[{"v": _["appliance"], "f": _["appliance"]}, list(calculations.values())[i]["energy"], _["watt"]/365000] for i, _ in enumerate(recommendations)]
         )
     charts.append([{"v": '', "f": ''}, round(sum(_["amount"] for _ in calculations.values())*365, 2), round(sum(_["price"] for _ in recommendations), 2)])
-    return render_template('result.html', calculations=calculations.values(), recommendations=recommendations, charts=charts)
+    return render_template('result.html', calculations=calculations, recommendations=recommendations, charts=charts)
 
 # EXPERIMENTAL
