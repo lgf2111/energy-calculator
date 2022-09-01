@@ -1,12 +1,12 @@
 {% extends "includes/base.html" %} 
 {% block content %}
-<div class="container my-3 py-5">
+<div class="container mt-3 pt-5">
     <form method="post">
         <script src="{{ url_for('static', filename='script/forms.js') }}" defer></script>
         <script src="{{ url_for('static', filename='script/filter-brands.js') }}" defer></script>
         <input type="hidden" name="index" id="index">
         <div id="forms" class=""></div>
-        <div class="container-fluid d-flex justify-content-center mb-4">
+        <div class="container-fluid d-flex justify-content-center mb-2">
             <div>
                 <button type="button" class="btn btn-primary mx-2" onclick="addForm()">Add</button>
                 <input type="submit" class="btn btn-success mx-2" value="Calculate" name="submit">
