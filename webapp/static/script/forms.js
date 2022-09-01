@@ -25,7 +25,7 @@ function addForm() {
             
     <div class="form-group my-2">
         <label for="usage-${i}" class="form-control-label">Hours Used (Per Day)</label>
-        <input type="number" class="form-control" id="usage-${i}" max="24" min="0" required value>
+        <input type="number" class="form-control" id="usage-${i}" name="usage-${i}" max="24" min="0" required>
     </div>
     
     <div class="form-group radio my-2">
@@ -47,9 +47,3 @@ function addForm() {
     window.scrollTo(0, document.body.scrollHeight)
 }
 addForm()
-
-function delform() {
-    var form = document.createElement("div");
-    form.className = "form";
-    forms.removeChild(form);
-}

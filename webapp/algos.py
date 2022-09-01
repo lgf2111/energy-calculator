@@ -1,13 +1,15 @@
-def calculate(television, fridge, air_conditioner, washing_machine, hours):
-    television = (television.watts * hours["television"])
-    fridge = (fridge.watts * hours["fridge"])
-    air_conditioner = (air_conditioner.watts * hours["air_conditioner"])
-    washing_machine = (washing_machine.watts * hours["washing_machine"])
-    total_energy = television + fridge + air_conditioner + washing_machine
-    total_energy = total_energy / 1000
-    total_amount = total_energy * 0.30
-    return total_energy, total_amount
+from webapp.models import Appliance, Brand
 
+def calculate(appliances):
+    calculations = {}
+    for appl in appliances:
+        w_to_kw = lambda w: w / 1000
+        kw_to_kwh = lambda kw: kw * .3
+        appliance = Appliance.query.filter_by(name=appl["appliance"],brand=Brand.query.filter_by(name=appl["brand"]).first()).first()
+        energy = w_to_kw(appliance.watts * appl["usage"])
+        amount = kw_to_kwh(energy)
+        calculations[appliance] = {"energy": energy, "amount": amount, "usage": appl["usage"]}
+    return calculations
 
 def recommend(appliance, hours):
     def calculate_savables(hours, given_watt):
