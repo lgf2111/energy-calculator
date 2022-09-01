@@ -5,7 +5,7 @@ from webapp.algos import calculate, recommend
 from flask_login import current_user, logout_user
 
 @app.route('/')
-@app.route('/home')
+@app.route('/home', methods=['GET', 'POST'])
 def home():
     form = LoginForm()
     if form.validate_on_submit:
@@ -15,7 +15,6 @@ def home():
         else:
             flash("Login Failed", 'danger')
     return render_template('home.html', title="Login", form=form)
-    return render_template('home.html')
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
