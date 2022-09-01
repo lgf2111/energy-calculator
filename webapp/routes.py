@@ -1,4 +1,3 @@
-from crypt import methods 
 from webapp import app, db
 from flask import render_template, redirect, url_for, flash, request
 from webapp.forms import CalculatorForm, LoginForm
@@ -30,7 +29,7 @@ def logout():
 def calculator():
     if request.method == "POST":
         return request.form
-    return render_template('calculator.html', title='Energy Calculator')
+    return render_template('calculator.html', title='Calculator')
 
 @app.route("/result")
 def result():
