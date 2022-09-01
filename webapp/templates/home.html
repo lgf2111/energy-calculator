@@ -16,7 +16,7 @@
     </div><!-- content -->
 </div>
 
-<div class="container d-flex justify-content-between align-items-center mb-5 ms-3">
+<div class="container d-flex justify-content-between align-items-center mb-5 ms-3" style="height:100vh;">
     <div class ="col-8">
         <h1 class="text-uppercase mb-3 fw-bold text-white">We need you!</h1>
         <p class="mb-4 text-uppercase">Saving the environment begins with contribuition  made by individuals like you and Energy Calculator will help to make that possible!</p>
@@ -42,7 +42,11 @@
     <h1 class="text-uppercase mb-3 fw-bold text-white"><span>The time is now!</span></h1>
     <p class="mb-3 text-uppercase col-10">The interactive board by NASA below shows the continious deterioration of the environment over a span of a few decades due to climate change.</p>
     <p class="mb-4 text-uppercase col-10">This furthur brings across the urgency for us to act now and stop climate change once and for all! </p>
-    <iframe src="https://climate.nasa.gov/interactives/climate_time_machine"></iframe>
+    <div class="d-flex justify-content-center flex-column">
+        <iframe src="https://climate.nasa.gov/interactives/climate_time_machine" id="iframe" class="border border-dark"></iframe>
+        <button id="fullscreen" class="btn btn-secondary" style="border-radius: 0 0 25px 25px;">Go Fullscreen</button>
+        <script src="{{url_for('static', filename='script/fullscreen.js')}}"></script>
+    </div>
 </div>
 
 {% endblock %}
