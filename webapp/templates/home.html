@@ -27,22 +27,26 @@
         <a href="calculator" class="btn btn-light p-2 text-dark text-uppercase">Click for calculator</a>
     </div>
     <div class="">
-        <img src="{{ url_for('static', filename='src/logo.png') }}" width="180"/>
+        <img src="{{ url_for('static', filename='src/logo.png') }}" width="160"/>
     </div>
 </div>
 
-<div class="content3" >
-    <div class ="info3">
+
+
+<div class="content3">
+    <div class="info3">
+        <h2 class="text-uppercase mb-3 fw-bold"><span>The Graph</span></h2>
+        <p class="mb-4 text-uppercase">This graph refers to the total electricity consumption by end users, including (embedded) consumption by autoproducers.  From Jan 2016, data have incorporated consumption of output from solar generation.</p>
+        {% include 'includes/graph.html' %}
+    </div>
+</div>
+
+<div class="content4" >
+    <div class ="info4">
         <h2 class="text-uppercase mb-3 fw-bold"><span>The time is now!</span></h2>
         <p class="mb-4 text-uppercase">The interactive board by NASA below shows the continious deterioration of the environment over a span of a few decades due to climate change.</p>
         <p class="mb-4 text-uppercase">This furthur brings across the urgency for us to act now and stop climate change once and for all! </p>
     </div>
-</div>
-
-<div class="content4">
-    <h1 class="text-uppercase mb-3 fw-bold font-5 text-white" style="margin-left: 330px">The Graph</h1>
-    <p class="mb-4 text-uppercase">This graph refers to the total electricity consumption by end users, including (embedded) consumption by autoproducers.  From Jan 2016, data have incorporated consumption of output from solar generation.</p>
-    {% include 'includes/graph.html' %}
 </div>
 
 <div class = "nasa">
