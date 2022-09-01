@@ -41,9 +41,6 @@
       // Set a callback to run when the Google Visualization API is loaded.
       google.charts.setOnLoadCallback(drawChart);
 
-      // Callback that creates and populates a data table,
-      // instantiates the pie chart, passes in the data and
-      // draws it.
       function drawChart() {
         // Create the data table.
         var data = new google.visualization.DataTable();
@@ -52,11 +49,20 @@
         data.addRows(chart1);
 
         // Set chart options
-        var options = {'title':'Energy Consumption Based on Appliance',
-                       'width':800,
-                       'height':600,
-                       'colors': ['#8BC6FC'],
-                        };
+        var options = {
+                'width':800,
+                'height':600,
+                title: 'Energy Consumption Based on Appliance',
+                hAxis: {
+                title: 'Appliances',
+                },
+                vAxis: { 
+                    minValue: 0,
+                    viewWindow: {
+                        min:0
+                    },
+                },
+            };
                         
 
         // Instantiate and draw our chart, passing in some options.
@@ -91,17 +97,13 @@
             var options = {
                 'width':800,
                 'height':600,
-                title: 'Energy Consumption Before and After',
+                title: 'Energy Consumption: Before and After',
                 hAxis: {
                 title: 'Appliances',
-                format: 'watt',
-                viewWindow: {
-                    min: [7, 30, 0],
-                    max: [17, 30, 0]
-                }
                 },
                 vAxis: {
-                title: 'Amount of energy consumed'
+                title: 'Energy Usage Comparisons',
+                minValue: 0,
                 }
             };
 
@@ -119,16 +121,6 @@
                     {{ loop.index }}) {{ recommendation["remark"] }}.
                 </span>
             {% endfor %}
-            <h7>
-            TV:
-            Hmm, it seems that your TV is consuming (-) kWh. If you stick to (-) hours, you could save ( original wattage - calculated saving wattage ) kWh, so why not switch to books instead!
-            Fridge:
-            Your Fridge requires (-) kWh annually, if you were to increase the temperature, and decrease the cooling, you could save ( original wattage (-) calculated saving wattage ) kWh.
-            Air Conditioning:
-            It looks like your Air Conditioning expends (-) watts. If you used it (-) hours less, you could save up to ( original wattage (-) calculated saving wattage ) kWh and have a big impact on the environment!
-            Washing Machine:
-            Did you know that all that washing you do, it takes up (-) watts of power? If you reduced it by just (-) times, you could enjoy energy savings of ( original wattage (-) calculated saving wattage ) kWh per annum.
-            </h7>
         </div>
     </div>
 
@@ -161,7 +153,7 @@
                 'height':600,
                 title: 'Savings',
                 hAxis: {
-                title: 'Appliances',
+                title: 'Cost',
                 format: '$',
                 viewWindow: {
                     min: [0],
