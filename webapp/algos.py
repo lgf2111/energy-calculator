@@ -78,7 +78,6 @@ def recommend(appliance, hours):
             "time": time, "amount": amount, "watt": watt, "price": price,
             "remark": remark}
     
-<<<<<<< HEAD
 def cal1(x):
     height = (x * 100) + 100 
 
