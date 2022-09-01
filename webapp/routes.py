@@ -8,7 +8,7 @@ import json
 @app.route('/')
 @app.route('/home')
 def home():
-    data = get_data('json/energy.json')
+    """ data = get_data('json/energy.json') """
     data = data['row'][1]['columns']
     key, value = [[] for _ in range(2)]
     for d in data:
