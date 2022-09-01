@@ -5,9 +5,16 @@ from webapp.algos import calculate, recommend
 from flask_login import current_user, logout_user
 
 @app.route('/')
-@app.route('/home')
+@app.route('/home', methods=['GET', 'POST'])
 def home():
-    return render_template('home.html')
+    form = LoginForm()
+    if form.validate_on_submit:
+        if form.email.data == "admin@gmail.com" and form.password.data == "password123":
+            flash('Login Successful!', 'success')
+            return redirect(url_for('admin.index'))
+        else:
+            flash("Login Failed", 'danger')
+    return render_template('home.html', title="Login", form=form)
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
