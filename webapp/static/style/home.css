@@ -1,5 +1,5 @@
 .hero {
-    margin-top: -65px;
+    /* margin-top: -65px; */
     position: relative;
     width: 100%;
     min-height: 100vh;
@@ -44,7 +44,7 @@
 }
 
 /*button animations for navbar*/
-.content .info a {
+.special-button {
     border-radius: 4px;
     box-shadow: inset 0 0 0 0 #076f8c ;
     transition: ease-out 0.3s ;
@@ -53,8 +53,21 @@
     height: 40px;
 }
 
-.content .info a:hover {
+.special-button:hover {
     box-shadow: inset 120px 0 0 0 #076f8c ;
+    color: #fff  ;
+}
+.special-button-2 {
+    border-radius: 4px;
+    box-shadow: inset 0 0 0 0 #076f8c ;
+    transition: ease-out 0.3s ;
+    width: 250px;
+    color: #000 !important ;
+    height: 40px;
+}
+
+.special-button-2:hover {
+    box-shadow: inset 250px 0 0 0 #076f8c ;
     color: #fff  ;
 }
 
