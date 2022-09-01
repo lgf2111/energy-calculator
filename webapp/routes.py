@@ -1,3 +1,4 @@
+import enum
 from webapp import app, db
 from flask import render_template, redirect, url_for, flash, request
 from webapp.forms import CalculatorForm, LoginForm
@@ -61,6 +62,13 @@ def result():
     recommendations = []
     for k in calculations:
         recommendations.append(recommend(k, calculations[k]["usage"]))
-    return render_template('result.html', calculations=calculations, recommendations=recommendations)
+
+    charts = []
+    charts.append([[_.name, calculations[_]["energy"]] for _ in calculations])
+    charts.append(
+        [[{"v": _["appliance"], "f": _["appliance"]}, list(calculations.values())[i]["energy"], _["watt"]/365000] for i, _ in enumerate(recommendations)]
+        )
+    charts.append([{"v": '', "f": ''}, round(sum(_["amount"] for _ in calculations.values())*365, 2), round(sum(_["price"] for _ in recommendations), 2)])
+    return render_template('result.html', calculations=calculations.values(), recommendations=recommendations, charts=charts)
 
 # EXPERIMENTAL
