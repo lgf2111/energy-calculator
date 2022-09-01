@@ -113,8 +113,15 @@
             }
         </script>
         </div>
-        <div class="graph ml-1" id="chart_div2"></div>
-        <p class="DynoClass mainstate p-1">
+        <div>
+            <h3>Now, how can we help you reduce your usage? We can start with seeing how reducing your appliance usage can affect your electricity usage</h3>
+        </div>
+        <div class="DynoClass">
+            {% for recommendation in recommendations %}
+                <span class="statement">
+                    {{ loop.index }}) {{ recommendation["remark"] }}.
+                </span>
+            {% endfor %}
             TV:
             Hmm, it seems that your TV is consuming (-) kWh. If you stick to (-) hours, you could save ( original wattage - calculated saving wattage ) kWh, so why not switch to books instead!
             Fridge:
