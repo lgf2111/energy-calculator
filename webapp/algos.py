@@ -55,24 +55,24 @@ def recommend(appliance, hours):
                 remark = f"\nIt looks like your Air Conditioning expends {watto} kWh. If you used it {limit} hours less, you could save up to ${price} and have a big impact on the environment"
                 break
         if not remark:
-            remark = f"Good Job!"
+            remark = f"You are doing a great job but have you ever considered switching to a fan? That might just make your consumption that much less"
             time, amount, watt, price = calculate_savables(limit, appliance.watts)    
 
     elif appliance.name == "Washing Machine":
         for limit in range(3, 0, -1):
             if limit == 1:
-                remark = "\nYour washing rates are pretty good but you could have an even bigger impact if you decrease the time you spend washing each load@"
-                time, amount, watt, price = calculate_savables(limit, appliance.watts*.79)
-            if hours > limit:
+                remark = "\nYour washing rates are pretty good but you could have an even bigger impact if you decrease the time you spend washing each load"
                 time, amount, watt, price = calculate_savables(limit, appliance.watts)
+            if hours > limit:
+                time, amount, watt, price = calculate_savables(limit, appliance.watts * 0.84)
                 watto = watt/1000
                 watto = round(watto)
                 remark = f"\nDid you know that all that washing you do, it takes up {watto} watts of power? If you reduced it to just {limit} times, you could enjoy energy savings of ${price} per annum"
                 
             break
         if not remark:
-            remark = f"Good Job!"
-            time, amount, watt, price = calculate_savables(limit, appliance.watts)    
+            remark = f"You seem to be doing a great job but you could save a bit more if you try to make your clothes last"
+            time, amount, watt, price = calculate_savables(limit, appliance.watts * 0.95)    
 
     return {"appliance": appliance.name, "brand": appliance.brand.name,
             "time": time, "amount": amount, "watt": watt, "price": price,
