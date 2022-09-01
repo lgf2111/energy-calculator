@@ -1,4 +1,7 @@
 from webapp.models import Appliance, Brand
+from webapp import app
+import os
+import json
 
 def calculate(appliances):
     calculations = {}
@@ -66,8 +69,8 @@ def recommend(appliance, hours):
             "time": time, "amount": amount, "watt": watt, "price": price,
             "remark": remark}
     
-def cal1(x):
-    height = (x * 100) + 100 
-
-def cal2(x):
-    width = (x * 75) + 125
+def get_data(path):
+    path = os.path.join(app.root_path, 'static', *path.replace('\\','/').split('/'))
+    with open(path, 'r') as f:
+        data = json.loads(f.read())
+    return data
