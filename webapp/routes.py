@@ -9,7 +9,12 @@ import json
 @app.route('/home')
 def home():
     data = get_data('json/energy.json')
-    return render_template('home.html', data=data)
+    data = data['row'][1]['columns']
+    key, value = [[] for _ in range(2)]
+    for d in data:
+        key.append(d['Key'])
+        value.append(d['Value'])
+    return render_template('home.html', key=key, value=value)
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
