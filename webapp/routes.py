@@ -13,6 +13,7 @@ def home():
 def login():
     form = LoginForm()
     if form.validate_on_submit:
+        print(form)
         if form.email.data == "admin@gmail.com" and form.password.data == "password123":
             flash('Login Successful!', 'success')
             return redirect(url_for('admin.index'))
@@ -36,31 +37,3 @@ def result():
     return render_template('result.html')
 
 # EXPERIMENTAL
-@app.route('/before')
-def before():
-    return render_template('before.html')
-
-@app.route("/after")
-def after():
-    return render_template('after.html')
-
-@app.route("/loginv2", methods=['GET', 'POST'])
-def loginv2():
-    form = LoginForm()
-    if form.validate_on_submit:
-        if form.email.data == "admin@gmail.com" and form.password.data == "password123":
-            flash('Login Successful!', 'success')
-            return redirect(url_for('admin.index'))
-        else:
-            flash("Login Failed", 'danger')
-    return render_template('loginv2.html', title="Login", form=form)
-
-@app.route("/algo")
-def algo():
-    from webapp.models import Appliance
-    appliances = Appliance.query.all()
-    recommendations = []
-    for appliance in appliances:
-        result = recommend(appliance, 5)
-        recommendations.append(result)
-    return recommendations
