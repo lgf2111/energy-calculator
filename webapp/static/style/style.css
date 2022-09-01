@@ -1,3 +1,5 @@
+/* This is for calculator page */
+
 * {
     font-family: "Poppins", sans-serif !important;
 }
@@ -10,40 +12,4 @@ body {
     filter: brightness(1.24);
     width: 100px;
     padding-left: 20px;
-}
-
-/*navbar link animations*/
-.navbar-nav {
-    position: relative;
-}
-
-.navbar-nav .nav-item a {
-    position: relative;
-}
-
-nav .container-fluid .collapse .navbar-nav .nav-item a:after {
-    content: "";
-    position: absolute;
-    background-color: #000;
-    height: 3px;
-    width: 0;
-    left: 0;
-    bottom: -10px;
-    transition: 0.3s;
-}
-
-a:hover:after {
-    width: 100% !important;
-}
-
-.block {
-    width: 100vw;
-    height: 100vh;
-    background: #000;
-    position: fixed;
-}
-
-.pad {
-    /* background: #000; */
-    height: 11vh;
 }

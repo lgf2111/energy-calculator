@@ -1,15 +1,15 @@
 main {
-    /* margin-top: -65px; */
+    margin-top: -65px;
     position: relative;
     width: 100%;
     min-height: 100vh;
     background: url(../src/bg.jpg) no-repeat;
-    background-size: cover;
-    background-position: center;
+    background-position: right;
     -webkit-background-size: contain;
     -moz-background-size: contain;
     -o-background-size: contain;
-    background-size: contain;
+    background-size: 850px;
+    
 }
 
 .content {
@@ -39,7 +39,7 @@ main {
     font-weight: 500;
 }
 
-/*button animations for navabar*/
+/*button animations for navbar*/
 .content .info a {
     border-radius: 4px;
     box-shadow: inset 0 0 0 0 #076f8c !important;
@@ -47,7 +47,6 @@ main {
     width: 120px;
     color: #000 !important;
     height: 40px;
-    /* border */
 }
 
 .content .info a:hover {
@@ -60,7 +59,7 @@ main {
 }
 
 .media-icons {
-    margin-bottom: 2em !important;
+    margin-bottom: -1em !important;
     margin-right: 2em !important;
 
 }
