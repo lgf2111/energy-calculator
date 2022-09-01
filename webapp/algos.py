@@ -43,7 +43,7 @@ def recommend(appliance, hours):
             watto = watt/1000
             watto = round(watto)
             savesave = watto - appliance.watts
-            remark = f"\nYour Fridge is using {watto} kWh right now, if you were to increase the temperature, and decrease the cooling, you could save {savesave} kWh"
+            remark = f"\nYour Fridge is using {watto} kWh right now, if you were to increase the temperature, and decrease the cooling, you could reduce power consumption to {savesave} kWh"
            
     
     elif appliance.name == "Air-Conditioner":
