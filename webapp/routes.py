@@ -4,8 +4,8 @@ from webapp.forms import CalculatorForm, LoginForm
 from webapp.algos import calculate, recommend
 from flask_login import current_user, logout_user
 
-@app.route('/')
-@app.route('/home', methods=['GET', 'POST'])
+@app.route('/', methods=['GET', 'POST']) 
+@app.route('/home', methods=['GET', 'POST']) 
 def home():
     form = LoginForm()
     if form.validate_on_submit:
