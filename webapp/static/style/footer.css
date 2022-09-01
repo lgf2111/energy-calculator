@@ -3,9 +3,9 @@
 .footer ul{
     list-style-type: none;
     margin-top: 5vh;
-    font-weight:500;
 }
 
-.footer ul{
-    font-weight: 500000;
+.footer #caption{
+    font-weight:1000;
+    margin-right: 3.5vw;
 }
