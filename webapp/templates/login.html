@@ -1,24 +1,50 @@
-{% extends "includes/base.html" %} 
+  {% extends "includes/base.html" %} 
 
-{% block content %}
-<link rel="stylesheet" href="{{ url_for('static', filename='style/home.css') }}">
-<main class="container-fluid landing d-flex flex-column justify-content-start">
-    <div class="content">
-        <div class="info">
-            <h2 class="text-uppercase mb-3 fw-bold">Love Nature<br><span>Save the Environment!</span></h2>
-            <p class="mb-4 text-uppercase">Let's Do what we can to save the Earth! Every small action counts!</p>
-            <p class="mb-4 text-uppercase">Environment plays an important role in healthy living and the existence of life on planet earth. Earth is a home for different living species and we all are dependent on the environment for food, air, water, and other needs. Let's all work together to save the Environment!</p>
-            <a href="https://climate.nasa.gov/effects/" class="btn btn-light p-2 text-light text-uppercase">More info</a>
-        </div><!-- info -->
-    </div><!-- content -->
-
-    <!-- <div class="media-icons d-flex justify-content-center align-items-center m-auto position-relative">
-        <a href="#"><i class="bi bi-facebook"></i></a>
-        <a href="#"><i class="bi bi-twitter"></i></a>
-        <a href="#"><i class="bi bi-instagram"></i></a>
-    </div> -->
-</main>
-<div class="block"></div>
+  {% block head_css %}
+  {% endblock %}
+  
+  {% block content %}
+  <link rel="stylesheet" href="{{ url_for('static', filename='style/home.css') }}">
+  <div class="containerlanding d-flex flex-column justify-content-start hero">
+	  <div class="content ms-5">
+		  <div class="info">
+			  <h2 class="text-uppercase mb-3 mt-5 fw-bold">Love Nature<br><span>Save the Environment!</span></h2>
+			  <p class="mb-4 text-uppercase">Let's Do what we can to save the Earth! Every small action counts!</p>
+			  <p class="mb-4 text-uppercase">Environment plays an important role in healthy living and the existence of life on planet earth. Earth is a home for different living species and we all are dependent on the environment for food, air, water, and other needs. Let's all work together to save the Environment!</p>
+			  <a href="https://climate.nasa.gov/effects/" class="special-button btn btn-light p-2 text-light text-uppercase">More info</a>
+		  </div><!-- info -->
+	  </div><!-- content -->
+  </div>
+  
+  <div class="container d-flex justify-content-between align-items-center mb-5 ms-3">
+	  <div class ="col-8">
+		  <h1 class="text-uppercase mb-3 fw-bold text-white">We need you!</h1>
+		  <p class="mb-4 text-uppercase">Saving the environment begins with contribuition  made by individuals like you and Energy Calculator will help to make that possible!</p>
+		  <p class="mb-4 text-uppercase">Energy calculator will help you make enviromentally friendly choices when it comes to your appliances at home!</p>
+		  <a href="calculator" class="special-button-2 btn btn-light py-2 text-dark text-uppercase">Click for calculator</a>
+	  </div>
+	  <div class="">
+		  <img src="{{ url_for('static', filename='src/calculator.png') }}" width="180" style="margin-left:-200px;margin-top:-40px;"/>
+	  </div>
+  </div>
+  
+  
+  
+  <div class="pt-5">
+	  <div class="ms-4 col-11">
+		  <h1 class="text-uppercase mb-3 fw-bold text-white"><span>The Graph</span></h1>
+		  <p class="mb-4 text-uppercase">This graph refers to the total electricity consumption by end users, including (embedded) consumption by autoproducers.  From Jan 2016, data have incorporated consumption of output from solar generation.</p>
+		  {% include 'includes/graph.html' %}
+	  </div>
+  </div>
+  
+  <div class="container-fluid d-flex justify-content-center flex-wrap text-center mb-3" style="margin-top:200px;">
+	  <h1 class="text-uppercase mb-3 fw-bold text-white"><span>The time is now!</span></h1>
+	  <p class="mb-3 text-uppercase col-10">The interactive board by NASA below shows the continious deterioration of the environment over a span of a few decades due to climate change.</p>
+	  <p class="mb-4 text-uppercase col-10">This furthur brings across the urgency for us to act now and stop climate change once and for all! </p>
+	  <iframe src="https://climate.nasa.gov/interactives/climate_time_machine"></iframe>
+  </div>
+  <div class="block"></div>
 <link rel="stylesheet" href="{{url_for('static', filename='style/login.css')}}">
 <div class="container" id="container">
 	<div class="form-container sign-in-container">
@@ -70,4 +96,5 @@
 		</div>
 	</div>
 </div>
+
   {% endblock %}
