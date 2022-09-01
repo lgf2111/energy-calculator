@@ -92,4 +92,12 @@ main {
     color: #bc2a8d !important;
 }
 
-
+.block {
+    position: fixed;
+    background: #000;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    z-index: 1;
+    filter: opacity(.4);
+}

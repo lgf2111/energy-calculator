@@ -1,0 +1,73 @@
+{% extends "includes/base.html" %} 
+
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='style/home.css') }}">
+<main class="container-fluid landing d-flex flex-column justify-content-start">
+    <div class="content">
+        <div class="info">
+            <h2 class="text-uppercase mb-3 fw-bold">Love Nature<br><span>Save the Environment!</span></h2>
+            <p class="mb-4 text-uppercase">Let's Do what we can to save the Earth! Every small action counts!</p>
+            <p class="mb-4 text-uppercase">Environment plays an important role in healthy living and the existence of life on planet earth. Earth is a home for different living species and we all are dependent on the environment for food, air, water, and other needs. Let's all work together to save the Environment!</p>
+            <a href="https://climate.nasa.gov/effects/" class="btn btn-light p-2 text-light text-uppercase">More info</a>
+        </div><!-- info -->
+    </div><!-- content -->
+
+    <div class="media-icons d-flex justify-content-center align-items-center m-auto position-relative">
+        <a href="#"><i class="bi bi-facebook"></i></a>
+        <a href="#"><i class="bi bi-twitter"></i></a>
+        <a href="#"><i class="bi bi-instagram"></i></a>
+    </div>
+</main>
+<div class="block"></div>
+<link rel="stylesheet" href="{{url_for('static', filename='style/login.css')}}">
+<div class="container" id="container">
+	<div class="form-container sign-in-container">
+		<form method="post">
+			<fieldset>
+				<legend class="text-uppercase fw-bold">Login</legend>
+				<div class="form-group">
+					{{ form.email.label(class="form-control-label") }}		
+					{% if form.email.errors %}
+						{{ form.email(class="form-control is-invalid") }}
+						<div class="invalid-feedback">
+							{% for error in form.email.errors %}
+								<span>{{ error }}</span>
+							{% endfor %}
+						</div>
+					{% else %}
+						{{ form.email(class="form-control") }}
+					{% endif %}                        
+				</div>
+
+				<div class="form-group">
+					{{ form.password.label(class="form-control-label") }}		
+					{% if form.password.errors %}
+						{{ form.password(class="form-control is-invalid") }}
+						<div class="invalid-feedback">
+							{% for error in form.password.errors %}
+								<span>{{ error }}</span>
+							{% endfor %}
+						</div>
+					{% else %}
+						{{ form.password(class="form-control") }}
+					{% endif %}                        
+				</div>
+
+				<div class="form-group">
+					{{form.submit(class="btn submit-btn text-uppercase fw-bold text-white")}}
+				</div>
+
+			</fieldset>
+		</form>
+	</div>
+	<div class="overlay-container">
+		<div class="overlay">
+			<div class="overlay-panel overlay-right">
+				<h1>Hello There!</h1>
+				<p>Are there any better ways to help the environment?</p>
+				<a class="ghost" id="signUp" href="/"><button>Back</button></a>
+			</div>
+		</div>
+	</div>
+</div>
+  {% endblock %}
