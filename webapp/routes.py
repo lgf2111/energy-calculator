@@ -30,7 +30,7 @@ def logout():
 def calculator():
     if request.method == "POST":
         return request.form
-    return render_template('calculator.html', title='Energy Calculator')
+    return render_template('calculator.html', title='Calculator')
 
 @app.route("/result")
 def result():

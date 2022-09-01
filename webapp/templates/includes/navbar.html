@@ -14,11 +14,15 @@
         </li>
 
         <li class="nav-item m-2">
-          <a href="{{ url_for('calculator', amt=0) }}" class="p-0 nav-link">Calculator</a>
+          {% if title == "Calculator" %}
+            <a href="#" class="p-0 nav-link">Calculator</a>
+          {% else %}
+            <a href="{{ url_for('calculator', amt=0) }}" class="p-0 nav-link">Calculator</a>
+          {% endif %}
         </li>
 
         <li class="nav-item m-2">
-          <a class="p-0 nav-link" href="{{ url_for('loginv2') }}">Log in</a>
+          <a class="p-0 nav-link" href="{{ url_for('loginv2') }}">Login</a>
         </li>
       </ul>
     </div> 
