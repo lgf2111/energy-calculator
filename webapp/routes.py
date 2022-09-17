@@ -2,8 +2,7 @@ from webapp import app, db
 from flask import render_template, redirect, url_for, flash, request, jsonify
 from webapp.forms import CalculatorForm, LoginForm
 from webapp.algos import calculate, recommend, get_data
-from flask_login import current_user, logout_user
-import json
+from flask_login import current_user, logout_user, login_required
 
 @app.route('/')
 @app.route('/home')
@@ -53,7 +52,7 @@ def result():
             )
         charts.append([{"v": '', "f": ''}, round(sum(_["amount"] for _ in calculations.values())*365, 2), round(sum(_["price"] for _ in recommendations), 2)])
         return render_template('result.html', calculations=calculations, recommendations=recommendations, charts=charts)
-
+    
 # api
 @app.route("/calculator/api", methods=["GET","POST"])
 def calculator_api():
