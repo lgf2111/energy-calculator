@@ -1,32 +1,61 @@
-<link rel="stylesheet" href="{{ url_for('static', filename='style/navbar.css') }}">
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='style/navbar.css') }}"
+/>
 
 <nav class="navbar navbar-expand-lg bg-white fixed-top">
-  <div class="container-fluid"  id="navbar">
-    <a class="navbar-brand d-flex align-middle ms-5" href="{{ url_for('home') }}">
-      <img class="" src="{{ url_for('static', filename='src/logo.png') }}" alt="logo" height="25"/>
-      <img class="" src="{{ url_for('static', filename='src/logo-name.png') }}" alt="logo-name" height="25"/>
+  <div class="container-fluid" id="navbar">
+    <a
+      class="navbar-brand d-flex align-middle ms-3"
+      href="{{ url_for('home') }}"
+    >
+      <img
+        class=""
+        src="{{ url_for('static', filename='src/logo.png') }}"
+        alt="logo"
+        height="25"
+      />
+      <img
+        class=""
+        src="{{ url_for('static', filename='src/logo-name.png') }}"
+        alt="logo-name"
+        height="25"
+      />
     </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mx-auto p-2 mb-2 mb-lg-0">
-        <li class="nav-item m-2">
+    <div
+      class="collapse navbar-collapse justify-content-end"
+      id="navbarSupportedContent"
+    >
+      <ul class="navbar-nav p-2 mb-2 mb-lg-0">
+        <li class="nav-item me-3">
           <a href="{{ url_for('home') }}" class="p-0 nav-link">Home</a>
         </li>
-        
-        <li class="nav-item m-2">
+
+        <li class="nav-item me-3">
           {% if title == "Calculator" %}
           <a href="#" class="p-0 nav-link">Calculator</a>
           {% else %}
-          <a href="{{ url_for('calculator') }}" class="p-0 nav-link">Calculator</a>
+          <a href="{{ url_for('calculator') }}" class="p-0 nav-link"
+            >Calculator</a
+          >
           {% endif %}
         </li>
-        
-        <li class="nav-item m-2">
+
+        <li class="nav-item me-3">
           <a href="{{ url_for('login') }}" class="p-0 nav-link">Login</a>
         </li>
       </ul>
-    </div> 
+    </div>
   </div>
 </nav>
